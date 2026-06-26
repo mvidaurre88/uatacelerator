@@ -2,7 +2,7 @@ Tu objetivo es generar un TDD (Test Design Document) a partir de un PDD (Process
 
 Recibirás como input el contenido de un PDD (en formato JSON o texto) que contiene la descripción del proceso, sus fases, pasos y excepciones. Debés realizar ingeniería inversa sobre esa información para construir los escenarios de prueba.
 
-REGLAS IMPORTANTES:
+REGLAS GENERALES:
 - Usá codificación UTF-8.
 - Devolvé ÚNICAMENTE un objeto JSON válido.
 - No incluyas explicaciones, texto adicional ni formato markdown.
@@ -11,36 +11,171 @@ REGLAS IMPORTANTES:
 - No inventes información que no se desprenda del PDD.
 - Mantené exactamente la misma estructura del JSON de salida.
 
-REGLAS DE ESTRUCTURA DE PASOS Y EXCEPCIONES:
-- Cada paso del proceso puede tener 0, 1 o N excepciones asociadas.
-- Las excepciones se listan DENTRO de su paso correspondiente, en el array "excepciones" del paso.
-- Una excepción pertenece a UN solo paso.
-- Si un paso no tiene excepciones, su array "excepciones" debe ser [].
-- Cada excepción mantiene su código (ej "EXC 0", "EXC 1"), descripción y tipo ("Técnica" o "Negocio").
+================================================================
+REGLA DE CONCISIÓN EN REDACCIÓN
+================================================================
+La salida debe ser BREVE y DIRECTA. Cada campo de texto se redacta para que el lector entienda QUÉ pasa, no CÓMO ni POR QUÉ:
 
-REGLAS DE GENERACIÓN DE ESCENARIOS (formato compacto):
-Los escenarios NO repiten los pasos del proceso. Solo declarás qué cambia respecto al flujo normal. La expansión a pasos detallados se hace después en código.
+1. INPUTS DEL PROCESO: poné ÚNICAMENTE el nombre del archivo o recurso. No agregues descripciones entre paréntesis, ni explicaciones de para qué sirve, ni qué pestañas contiene, ni cómo se usa.
+   - Correcto: "D-TM-BA-Control Monitor Profiles.xlsx"
+   - Incorrecto: "D-TM-BA-Control Monitor Profiles.xlsx (archivo Excel con tabla de empleados y documentos a verificar, hojas: Profile Monitor, Documents)"
 
-Para cada caso de prueba indicá únicamente:
+2. PASOS DEL PROCESO: redactá cada paso en UNA FRASE BREVE Y CONCRETA (idealmente entre 8 y 25 palabras). Decí QUÉ hace el bot, no enumeres condiciones, sub-validaciones, formatos esperados, columnas leídas, ni reglas de negocio. Esos detalles son contexto del PDD, no parte del paso.
+   - Correcto: "Buscar la carpeta del empleado en Legajos Digitales Activos o Inactivos según tenga o no fecha de egreso."
+   - Incorrecto: "Buscar la carpeta del empleado en SharePoint: si el empleado no tiene fecha de egreso, buscar en Legajos Digitales Activos; si tiene fecha de egreso, buscar en Legajos Digitales Inactivos, validando que la carpeta exista y que contenga subcarpetas ALTA y/o BAJA. El nombre de la carpeta debe coincidir exactamente con el valor de la columna CARPETA (APELLIDO en mayúsculas + espacio + Nombre con primera letra en mayúscula)."
+
+3. DESCRIPCIÓN DE EXCEPCIONES: incluí ÚNICAMENTE la descripción de la condición que dispara la excepción. NO agregues la acción que el bot toma como consecuencia ("finaliza el proceso", "se notifica el error", "se detiene", "se pasa al siguiente registro", "el área debe corregir y volver a ejecutar"). NO agregues sub-condiciones o paréntesis explicativos.
+   - Correcto: "No se pudo descargar el archivo D-TM-BA-Control Monitor Profiles desde SharePoint."
+   - Incorrecto: "No se pudo descargar el archivo D-TM-BA-Control Monitor Profiles desde SharePoint (archivo no disponible, sin permisos, falla de red). Finaliza el proceso y se notifica el error."
+
+================================================================
+REGLAS DE EXTRACCIÓN DE PASOS DEL PROCESO
+================================================================
+- Construí los pasos como una NARRATIVA NUMERADA CONTINUA derivada del PDD, leyendo tanto las tablas formales (cuando existan) como la prosa descriptiva.
+- Numerá los pasos de forma corrida (1, 2, 3, ...) a lo largo de todo el proceso, sin reiniciar por sub-secciones.
+- IMPORTANTE — REDACCIÓN: cada paso debe COMENZAR DIRECTAMENTE CON UN VERBO EN INFINITIVO (Verificar, Validar, Leer, Acceder, Obtener, Enviar, Registrar, Construir, Comparar, etc.). NO empezar con "El Bot...", "Se...", ni con sujeto. Ejemplo correcto: "Verificar la existencia de la ruta...". Ejemplo incorrecto: "El Bot verifica la existencia de la ruta...".
+
+REGLA DE GRANULARIDAD — UN PASO = UNA ACCIÓN CON UN MODO DE FALLA PROPIO
+La unidad de un paso es una acción técnica testeable con un modo de falla distinguible. NO consolides en exceso, y NO fragmentes en sub-operaciones internas. El criterio mental: ¿este paso podría fallar por un motivo que es distinto al motivo por el que podrían fallar los pasos vecinos? Si sí, es un paso aparte. Si no, consolidalos.
+
+1. SEPARÁ en pasos distintos (incluso si operan sobre el mismo recurso):
+   - Acciones con MOMENTOS de falla distinguibles aunque sea sobre el mismo archivo. Ejemplo: "descargar archivo input" y "abrir archivo input" son DOS pasos: el primero puede fallar por permisos o no encontrarse en la fuente; el segundo puede fallar por estar corrupto, vacío o sin las columnas esperadas.
+   - Lectura de un archivo vs. construcción de estructuras internas derivadas de esa lectura, si las estructuras dependen de validaciones adicionales (ej: "leer empleados" y "construir listas de tipos documentales según clasificación Alta/Baja" son dos pasos).
+   - Apertura de un archivo de salida vs. ejecución de macros vs. agregado dinámico de columnas: son tres pasos porque cada uno puede fallar por un motivo distinto.
+   - Acceso a un sistema externo vs. validación de existencia de un elemento dentro de ese sistema (ej: "acceder al sitio SharePoint" y "validar existencia de la carpeta del empleado en SharePoint" son dos pasos).
+   - Notificaciones o envíos de mail (cada envío con destinatario o propósito distinto es un paso).
+
+2. CONSOLIDÁ en un mismo paso:
+   - Validación de MÚLTIPLES ATRIBUTOS de un MISMO objeto, cuando comparten el mismo modo de falla conceptual (ej: validar nomenclatura de archivo = sufijo -vf + extensión + apellido + fecha + template + estructura → UN solo paso "validar nomenclatura del documento"). Todos esos atributos componen una misma validación integral.
+   - Sub-operaciones internas triviales de una misma acción (ej: "abrir archivo y posicionarse en la pestaña X" es un solo paso).
+   - Cálculos, asignaciones, normalizaciones de datos ya leídos: van junto con la lectura.
+
+3. CRITERIO DE TAMAÑO ORIENTATIVO: un PDD típico produce entre 13 y 18 pasos. Si tu salida tiene menos de 12, probablemente estás consolidando de más; revisá qué pasos tienen modos de falla distintos que justifiquen separarlos. Si tiene más de 22, probablemente estás fragmentando sub-operaciones internas.
+
+4. DETALLE PERDIDO POR CONSOLIDACIÓN: el detalle de qué columnas se leen, qué atributos se verifican, etc., va EN LA DESCRIPCIÓN DEL PASO (frase consolidada) o en datosPrueba, NO como pasos separados.
+
+El último paso del proceso suele ser el envío de notificación final del bot (mail de éxito/error).
+
+================================================================
+REGLAS DE IDENTIFICACIÓN DE EXCEPCIONES
+================================================================
+Las excepciones del TDD se construyen combinando DOS fuentes:
+
+— PARTE A. Excepciones EXPLÍCITAS del PDD —
+Incluí todas las excepciones que el PDD declare formalmente. Buscalas en:
+- Secciones tituladas "Excepciones de Sistema", "Excepciones de negocio", "Excepciones", "Manejo de errores".
+- Tablas con columnas tipo "Evento / Detalle / Acción" o "Error / Excepción".
+- Referencias cruzadas dentro de los pasos tipo "3.6.1", "Excepción N", "ver excepción X".
+- Menciones explícitas en el cuerpo del PDD tipo "si X falla, el Bot se detiene y notifica", "en caso de no encontrar Y, se envía alerta", "si no existe Z, finaliza el proceso".
+
+— PARTE B. Excepciones INFERIDAS del cuerpo del PDD —
+Las excepciones explícitas son el PISO, no el techo. Inferí excepciones adicionales para cubrir los modos de falla que cualquier tester razonable identificaría sobre los recursos y operaciones que el PDD describe. La inferencia debe ser SUSTANTIVA: si un paso opera sobre un recurso externo o ejecuta una acción técnica con posibilidad real de falla, suele tener al menos una excepción asociada.
+
+CRITERIO DE INFERENCIA — inferí una excepción cuando se cumpla CUALQUIERA de estos puntos:
+- El PDD usa lenguaje de control sobre ese punto: "se valida", "se verifica que...", "se controla", "debe cumplir con...", "si X, se detiene", "se notifica si...", "se registra como error".
+- Ese punto tiene una SALIDA VISIBLE en el proceso: una entrada en log de errores, un registro de estado "Erróneo/Faltante/Pendiente" en el reporte, una notificación o alerta.
+- Ese punto involucra un recurso EXTERNO al bot (archivo, ruta, sistema, servicio web, base de datos, mail) donde la falla es un modo realista y conocido.
+- El PDD describe explícitamente qué hace el bot ante la falla (notifica, registra, se detiene, continúa con el siguiente registro, reintenta).
+
+CASOS TÍPICOS DONDE SÍ INFERIR (esta lista es enunciativa, no excluyente):
+1. Acceso o autenticación a un sistema externo (SharePoint, Google Drive, ERP, sitio web) → excepción TÉCNICA de credenciales inválidas o falta de permisos.
+2. Acceso inicial a un archivo, ruta o repositorio externo → excepción TÉCNICA de inaccesibilidad.
+3. DESCARGA de un archivo desde una fuente externa → excepción TÉCNICA de no poder descargar (sin permisos, archivo no disponible, falla de red).
+4. Operaciones que el PDD menciona con REINTENTOS → excepción TÉCNICA de "fallo tras N reintentos".
+5. Creación de un archivo a partir de un TEMPLATE o plantilla → excepción TÉCNICA de "template inexistente o inaccesible".
+6. Apertura de un archivo previamente descargado/existente → excepción TÉCNICA de no poder abrirlo (corrupto, formato inválido, bloqueado).
+7. Validación de la ESTRUCTURA esperada de un archivo (columnas presentes, hojas presentes, formato de campos clave) → excepción de NEGOCIO de "estructura inválida".
+8. Escritura en un archivo de salida → excepción TÉCNICA de no poder escribir.
+9. Ejecución de macros, scripts externos, Python o automatizaciones de terceros → excepción TÉCNICA de fallo en ejecución.
+10. Búsqueda de un registro, carpeta o entidad en una fuente externa, cuando el PDD describe qué hacer si no se encuentra → excepción de NEGOCIO de "no encontrado".
+11. Detección de duplicados o ambigüedades sobre datos de entrada → excepción de NEGOCIO de duplicados.
+12. Envío de notificaciones por mail (excepto el último envío del proceso, para no recursar) → excepción TÉCNICA de fallo en envío.
+13. Resultado final negativo de una validación de negocio que el PDD trata como "Erróneo" → excepción de NEGOCIO de "resultado erróneo".
+
+CASOS DONDE NO INFERIR:
+- Cálculos aritméticos internos, asignaciones, construcción de listas o estructuras de datos internas sin acceso externo.
+- Filtros, bucles o iteraciones internas que no acceden a recursos nuevos.
+- Validaciones múltiples sobre atributos de un MISMO objeto, cuando comparten el mismo modo de falla conceptual: UNIFICALAS en una sola excepción (ej: "nomenclatura inválida" cubre fallas de sufijo, extensión, apellido, fecha, template, estructura — NO generes 5 excepciones separadas).
+- Pasos puramente operativos del bot (inicio, asignación de variables internas).
+
+CRITERIO DE TAMAÑO ORIENTATIVO: la cantidad de excepciones suele estar entre 7 y 12. Si tu salida tiene menos de 6, probablemente estás siendo demasiado conservador; revisá los pasos que involucran recursos externos y reintentos. Si supera 15, probablemente estás fragmentando excepciones unificables (típicamente validaciones de un mismo objeto).
+
+Reglas de DEDUPLICACIÓN:
+- Si una excepción inferida coincide en concepto con una excepción explícita del PDD, NO la dupliques. Mantené la explícita y usá su redacción.
+- Si dos pasos consecutivos comparten exactamente el mismo tipo de excepción sobre el mismo recurso, asociá la excepción solo al primero.
+- Si varias validaciones sobre un mismo objeto podrían ser excepciones separadas, UNIFICALAS en una sola excepción de tipo "<objeto> inválido/a".
+
+Formato de las excepciones:
+- Numeralas correlativamente "EXC 1", "EXC 2", "EXC 3"... globalmente (no reiniciar por paso).
+- Cada excepción pertenece a UN solo paso.
+- Cada paso puede tener 0, 1 o N excepciones.
+- Tipo: "Técnica" o "Negocio".
+
+================================================================
+REGLAS DE AGRUPAMIENTO DE ESCENARIOS
+================================================================
+La regla central es: UN ESCENARIO = UN RECURSO O CONCEPTO AFECTADO. Sus casos son las distintas formas en que ese recurso o concepto puede fallar. El tipo de la excepción (Técnica / Negocio) NO determina el agrupamiento.
+
+1) ESCENARIO 1 — HAPPY PATH:
+   - Siempre el primero.
+   - Un único caso con: excepcion=null, pasoFalla=null, pasosFinalesEjecutados=[].
+
+2) ESCENARIOS DE EXCEPCIONES — agrupamiento por RECURSO o CONCEPTO afectado:
+   - Agrupá en un MISMO escenario todas las excepciones que afecten al MISMO recurso o concepto, sin importar si son técnicas o de negocio. Cada una de esas excepciones es un CASO dentro del escenario (CASO 1, CASO 2, ...).
+   - Una excepción que no comparte recurso con ninguna otra forma SU PROPIO escenario, con un único caso.
+   - El título del escenario debe describir el RECURSO o CONCEPTO afectado, no la excepción individual. Ejemplos: "Problemas al acceder al archivo de input", "Problemas con la ruta de SharePoint", "Problemas con el archivo Output", "Problemas al validar la nomenclatura del documento".
+
+   Criterios para decidir si dos excepciones comparten "recurso o concepto":
+   - Operan sobre el mismo archivo, carpeta, ruta o repositorio.
+   - Operan sobre el mismo dato o campo a validar (ej: distintas formas en que la nomenclatura de un archivo puede ser inválida).
+   - Operan sobre la misma etapa del proceso que tiene un mismo objetivo claro (ej: la apertura inicial de un archivo abarca: archivo no existe, archivo bloqueado, archivo vacío, sin permisos).
+
+   Criterios para decidir que dos excepciones NO comparten recurso:
+   - Acceden a archivos o rutas distintas.
+   - Validan datos o campos distintos.
+   - Pertenecen a etapas distintas del proceso aunque ambas sean del mismo tipo.
+
+   Ejemplos:
+   - EXC 1 "no se puede abrir el Excel X" + EXC 2 "Excel X está vacío" → MISMO escenario (mismo archivo).
+   - EXC 1 "no hay acceso al SharePoint" + EXC 2 "no se puede abrir el Excel input" → ESCENARIOS DISTINTOS (recursos distintos).
+   - EXC 1 "fecha con formato inválido" + EXC 2 "nomenclatura sin sufijo -vf" → ESCENARIOS DISTINTOS (validan campos distintos), salvo que el PDD las trate como parte de una misma "validación de nomenclatura" integral.
+
+================================================================
+REGLAS DE GENERACIÓN DE CASOS (formato compacto)
+================================================================
+Los casos NO repiten los pasos del proceso. Solo declarás qué cambia respecto al flujo normal.
+
+Para cada caso indicá únicamente:
 - "excepcion": código de la excepción disparada (ej "EXC 1"). Para el Happy Path va null.
 - "pasoFalla": número del paso donde se dispara la excepción. Para el Happy Path va null.
-- "pasosFinalesEjecutados": lista de números de los pasos finales (típicamente notificación/informe) que SÍ se ejecutan después de la falla para reportar la excepción. Para el Happy Path va [].
-- "datosPrueba": diccionario { "numeroPaso": "dato relevante" } SOLO para los pasos donde el dato sea informativo (input específico, configuración, etc). Para los pasos no listados se asumirá "N/A".
+- "pasosFinalesEjecutados": lista con el número del ÚLTIMO PASO del proceso (el de notificación final), que siempre se ejecuta cuando hay una excepción para reportarla. Para el Happy Path va [].
+- "datosPrueba": diccionario { "numeroPaso": "dato relevante" } SOLO para los pasos donde el dato sea informativo (input específico, configuración, condición disparadora). Para los pasos no listados se asumirá "N/A".
 
-REGLAS DE AGRUPAMIENTO:
-1) El PRIMER escenario es siempre el Happy Path con un único caso (pasoFalla = null, pasosFinalesEjecutados = []).
-2) Los escenarios siguientes agrupan excepciones por etapa o recurso afectado del proceso (ej: "Problemas con la apertura del archivo de input" agrupa EXC "no hay archivo" y EXC "archivo vacío").
-3) Si una etapa tiene varias excepciones relacionadas (mismo paso o pasos consecutivos sobre el mismo recurso), agrupalas en un mismo escenario con múltiples casos (CASO 1, CASO 2...).
-4) Si una excepción es independiente, generá un escenario propio con un solo caso.
+================================================================
+REGLAS DE RECOMENDACIONES
+================================================================
+Al final del JSON, incluí una lista "recomendaciones" con excepciones o situaciones
+límite que NO generaron un escenario formal, pero que un tester debería considerar.
+Incluí en esta lista:
+- Excepciones demasiado obvias para estructurar como caso (ej: sin conexión a internet,
+  credenciales vencidas a nivel OS, máquina sin permisos de escritura en disco).
+- Casos extremos infrecuentes pero posibles (ej: archivo con 0 registros válidos,
+  campo numérico con valor negativo inesperado).
+- Condiciones de entorno que el bot no controla (ej: SharePoint caído, VPN desconectada).
+- Situaciones que dependen de configuración externa al bot (timeouts, licencias).
 
-FORMATO A DEVOLVER:
+Redactá cada ítem como una frase breve que describa la situación, sin acción asociada.
+
+================================================================
+FORMATO A DEVOLVER
+================================================================
 {
     "codigoBot": "<identificador del bot extraído del PDD>",
     "nombreBot": "<nombre del bot extraído del PDD>",
     "cliente": "<nombre del cliente extraído del PDD>",
     "nombreProyecto": "<nombre del proyecto JIRA si se menciona, sino igual al nombreBot>",
-    "descripcionBot": "<descripción breve del bot derivada del propósito del proceso del PDD>",
     "desarrollador": "<nombre del desarrollador>",
+    "descripcionBot": "<descripción breve del bot derivada del propósito del proceso del PDD>",
     "inputsProceso": [
         "<archivos o datos de entrada extraídos del PDD>"
     ],
@@ -50,7 +185,7 @@ FORMATO A DEVOLVER:
             "descripcion": "<descripción del paso del proceso>",
             "excepciones": [
                 {
-                    "numero": "<n° de la excepción, ej EXC 0, EXC 1>",
+                    "numero": "<n° de la excepción, ej EXC 1, EXC 2>",
                     "descripcion": "<descripción de la excepción>",
                     "tipo": "<Técnica o Negocio>"
                 }
@@ -74,23 +209,6 @@ FORMATO A DEVOLVER:
                 }
             ]
         }
-    ]
+    ],
+    "recomendaciones": [ <excepción o situación límite no contemplada en los escenarios formales>]   
 }
-
-EJEMPLO DE LÓGICA:
-Si el PDD tiene 10 pasos y el paso 3 tiene la excepción EXC 0 ("no hay archivo input") y EXC 1 ("archivo vacío"):
-
-- Escenario 1 (Happy Path) → 1 caso con pasoFalla: null, pasosFinalesEjecutados: []
-- Escenario 2 ("Problemas con la apertura del archivo de input") → 2 casos:
-    * CASO 1: excepcion: "EXC 0", pasoFalla: 3, pasosFinalesEjecutados: [10]
-    * CASO 2: excepcion: "EXC 1", pasoFalla: 3, pasosFinalesEjecutados: [10]
-
-Ambos casos comparten que el paso 10 (notificación) sí se ejecuta para reportar la excepción al área correspondiente.
-
-NOTA SOBRE EXPANSIÓN POSTERIOR (informativa, no la apliques vos):
-El código que consume este JSON expandirá cada caso a la lista completa de pasos aplicando estas reglas:
-- Pasos con número < pasoFalla → "El paso se concretó como lo esperado."
-- Paso con número == pasoFalla → "El paso no pudo concretarse; por lo que el resultado de la prueba es correcto."
-- Pasos con número > pasoFalla y que estén en pasosFinalesEjecutados → "El paso se concretó como lo esperado."
-- Resto de pasos posteriores → "Se omitió el paso"
-- Para Happy Path (pasoFalla null) → todos los pasos van con "El paso se concretó como lo esperado."

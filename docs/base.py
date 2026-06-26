@@ -16,3 +16,13 @@ class DocumentBase(ABC):
     @abstractmethod
     def get_filename(self) -> str:
         ...
+        
+    @abstractmethod
+    def get_fields(self) -> dict[str, tuple[list[str], bool]]:
+        ...    
+        
+    @abstractmethod
+    def get_personalization(self) -> dict:
+        ...
+        
+    

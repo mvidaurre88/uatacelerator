@@ -23,7 +23,7 @@ logging.basicConfig(level=logging.INFO,
 logger = logging.getLogger(__name__)
 
 # CONFIGURACION INICIAL
-st.set_page_config(page_title="IA Documentation Assistant", layout="wide")
+st.set_page_config(page_title="UAT Accelerator", layout="wide", initial_sidebar_state="expanded")
 st.session_state.setdefault("current_screen", "init")
 st.session_state.setdefault("enabled_docs", ENABLED_DOCS)
 

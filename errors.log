@@ -1,251 +1,966 @@
-2026-05-04 10:54:02,326 [INFO] Archivo procesado: D-OP-RPA-INTERNO-Legajos y Formularios-Template Guia Soporte y User.docx | Tipo: text | Tokens estimados: ~293,432
-2026-05-04 10:54:03,202 [INFO] Archivo procesado: D-OP-RPA-INTERNO-Legajos y formularios-PDD V.9.docx | Tipo: text | Tokens estimados: ~175,708
-2026-05-04 10:54:04,515 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
-2026-05-04 10:56:53,670 [INFO] Archivo procesado: D-OP-RPA-INTERNO-Legajos y Formularios-Template Guia Soporte y User.docx | Tipo: text | Tokens estimados: ~5,179
-2026-05-04 10:56:54,452 [INFO] Archivo procesado: D-OP-RPA-INTERNO-Legajos y formularios-PDD V.9.docx | Tipo: text | Tokens estimados: ~4,315
-2026-05-04 10:56:56,791 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
-2026-05-04 11:12:56,167 [INFO] Archivo procesado: D-OP-RPA-INTERNO-Legajos y Formularios-Template Guia Soporte y User.docx | Tipo: text | Tokens estimados: ~5,179
-2026-05-04 11:12:56,900 [INFO] Archivo procesado: D-OP-RPA-INTERNO-Legajos y formularios-PDD V.9.docx | Tipo: text | Tokens estimados: ~4,315
-2026-05-04 11:12:59,194 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
-2026-05-04 11:17:18,115 [ERROR] Task exception was never retrieved
-future: <Task finished name='Task-36045' coro=<WebSocketProtocol13.write_message.<locals>.wrapper() done, defined at C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\tornado\websocket.py:1111> exception=WebSocketClosedError()>
+2026-05-21 11:09:07,817 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
+2026-05-21 11:09:12,560 [INFO] PNG generado con Graphviz local (14622 bytes)
+2026-05-21 11:09:12,563 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
+2026-05-21 11:09:13,227 [INFO] PNG generado con Graphviz local (76766 bytes)
+2026-05-21 12:12:10,826 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
+2026-05-21 12:12:11,321 [INFO] PNG generado con Graphviz local (14622 bytes)
+2026-05-21 12:12:11,322 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
+2026-05-21 12:12:12,096 [INFO] PNG generado con Graphviz local (76766 bytes)
+2026-05-22 09:37:15,824 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
+2026-05-22 09:37:19,584 [INFO] PNG generado con Graphviz local (14622 bytes)
+2026-05-22 09:37:19,586 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
+2026-05-22 09:37:20,386 [INFO] PNG generado con Graphviz local (76766 bytes)
+2026-05-22 10:06:11,208 [ERROR] Error al generar documento: Cannot convert {'value': 'Archivo Excel D-TM-Control Monitor Profiles.xlsx (ubicado en SharePoint)', '_id': 'e4bf1349-33ba-44cf-8b7c-fb798f36791e'} to Excel
 Traceback (most recent call last):
-  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\tornado\websocket.py", line 1113, in wrapper
-    await fut
-tornado.iostream.StreamClosedError: Stream is closed
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\screens\screen_verify.py", line 47, in screen_verify
+    generate_docx(sanitized, None)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\utils\docx_generator.py", line 33, in generate_docx
+    buffer = generate_TDD(jsonText)
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\utils\test_script_generator.py", line 33, in generate_TDD
+    writer.render_book(payloads=payloads)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\xltpl\writermixin.py", line 116, in render_book
+    return self.render_sheets(payloads)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\xltpl\writermixin.py", line 113, in render_sheets
+    self.render_sheet(payload)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\xlsxtpl\writerx.py", line 16, in render_sheet
+    return BookWriterBase.render_sheet(self, payload)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\xltpl\writermixin.py", line 108, in render_sheet
+    sheet_resource.render_sheet(sheet_writer, payload)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\xltpl\sheetresource.py", line 15, in render_sheet
+    self.jinja_tree.render(payload)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\xltpl\jinja.py", line 22, in handle_exception
+    Environment.handle_exception(self, *args, **kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 7, in top-level template code
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\xltpl\xlext.py", line 21, in _node
+    node = self.environment.node_map.get_node(key)
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\xltpl\nodemap.py", line 64, in get_node
+    self.find_lca(self.last_node, self.current_node)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\xltpl\nodemap.py", line 46, in find_lca
+    pre.exit()
+    ~~~~~~~~^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\xltpl\xlnode.py", line 388, in exit
+    self.write(self.rv, None)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\xltpl\xlnode.py", line 266, in write
+    self._parent.write_cell(self, rv, cty)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\xltpl\xlnode.py", line 438, in write_cell
+    self.sheet_writer.write_cell(cell_node, rv, cty)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\xltpl\writermixin.py", line 48, in write_cell
+    target_cell = cell_context.target_cell
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\xltpl\cellcontext.py", line 95, in target_cell
+    target.value = value
+    ^^^^^^^^^^^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\openpyxl\cell\cell.py", line 218, in value
+    self._bind_value(value)
+    ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\openpyxl\cell\cell.py", line 187, in _bind_value
+    raise ValueError("Cannot convert {0!r} to Excel".format(value))
+ValueError: Cannot convert {'value': 'Archivo Excel D-TM-Control Monitor Profiles.xlsx (ubicado en SharePoint)', '_id': 'e4bf1349-33ba-44cf-8b7c-fb798f36791e'} to Excel
 
-During handling of the above exception, another exception occurred:
-
+2026-05-22 10:07:47,903 [ERROR] Error al generar documento: argument of type 'int' is not a container or iterable
 Traceback (most recent call last):
-  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\tornado\websocket.py", line 1115, in wrapper
-    raise WebSocketClosedError()
-tornado.websocket.WebSocketClosedError
-2026-05-04 11:17:33,301 [INFO] Archivo procesado: D-OP-RPA-INTERNO-Legajos y Formularios-Template Guia Soporte y User.docx | Tipo: text | Tokens estimados: ~5,179
-2026-05-04 11:17:34,002 [INFO] Archivo procesado: D-OP-RPA-INTERNO-Legajos y formularios-PDD V.9.docx | Tipo: text | Tokens estimados: ~4,315
-2026-05-04 11:17:36,253 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
-2026-05-04 11:20:02,604 [INFO] Diagrama Mermaid: 34 líneas, 1225 caracteres
-2026-05-04 11:21:03,140 [INFO] Diagrama Mermaid: 95 líneas, 3130 caracteres
-2026-05-04 11:23:46,024 [INFO] Archivo procesado: D-OP-RPA-INTERNO-Legajos y formularios-PDD V.9.docx | Tipo: text | Tokens estimados: ~4,315
-2026-05-04 11:23:46,740 [INFO] Archivo procesado: D-OP-RPA-INTERNO-Legajos y Formularios-Template Guia Soporte y User.docx | Tipo: text | Tokens estimados: ~5,179
-2026-05-04 11:23:49,327 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
-2026-05-04 11:39:50,662 [INFO] Archivo procesado: D-OP-RPA-INTERNO-Legajos y Formularios-Template Guia Soporte y User.docx | Tipo: text | Tokens estimados: ~5,179
-2026-05-04 11:39:51,402 [INFO] Archivo procesado: D-OP-RPA-INTERNO-Legajos y formularios-PDD V.9.docx | Tipo: text | Tokens estimados: ~4,315
-2026-05-04 11:39:53,752 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
-2026-05-04 11:44:42,499 [INFO] Archivo procesado: D-OP-RPA-INTERNO-Legajos y Formularios-Template Guia Soporte y User.docx | Tipo: text | Tokens estimados: ~5,179
-2026-05-04 11:44:43,242 [INFO] Archivo procesado: D-OP-RPA-INTERNO-Legajos y formularios-PDD V.9.docx | Tipo: text | Tokens estimados: ~4,315
-2026-05-04 11:44:45,070 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
-2026-05-04 11:47:04,234 [INFO] Respuesta IA generada exitosamente (intento 1)
-2026-05-04 11:47:04,830 [INFO] Diagrama Mermaid: 33 líneas, 1121 caracteres
-2026-05-04 11:47:04,830 [WARNING] mermaid.ink falló: name 'json' is not defined, intentando con Kroki...
-2026-05-04 11:48:06,717 [ERROR] Kroki falló: 504 Server Error: Gateway Timeout for url: https://kroki.io/mermaid/png
-2026-05-04 11:48:06,718 [ERROR] Todos los servicios de Mermaid fallaron
-2026-05-04 11:48:06,723 [INFO] Diagrama Mermaid: 88 líneas, 2592 caracteres
-2026-05-04 11:48:06,724 [WARNING] mermaid.ink falló: name 'json' is not defined, intentando con Kroki...
-2026-05-04 11:48:37,302 [INFO] PNG generado con Kroki (intento 1)
-2026-05-04 11:53:39,652 [INFO] Archivo procesado: D-OP-RPA-INTERNO-Legajos y Formularios-Template Guia Soporte y User.docx | Tipo: text | Tokens estimados: ~5,179
-2026-05-04 11:53:40,378 [INFO] Archivo procesado: D-OP-RPA-INTERNO-Legajos y formularios-PDD V.9.docx | Tipo: text | Tokens estimados: ~4,315
-2026-05-04 11:53:42,882 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
-2026-05-04 11:56:03,363 [INFO] Respuesta IA generada exitosamente (intento 1)
-2026-05-04 11:56:04,599 [INFO] Diagrama Mermaid: 21 líneas, 1023 caracteres
-2026-05-04 11:56:07,666 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:jZRPa4MwGIe_irhLCy109NDRw8D5ZwtYFY3u0JYSNLbZ1JQYYV3pd5-LsXqp6EEP_p6HN-_7kqsa0wSra0U9MnQ-KdDYFUr9BFDz4WQrPvupMp-_KhsNOFsNfh5sfERftFQuikVZXmWIEVoeNogUh-h53_D_YUEFJgy9ASzAvDpLSGQFpbuOBd4HMJ0WKTlKrkkL0PPNSLOBMYB6DEcoIwmKCS1wKR0tKCy2qcPQ1wYkNo55xZD5E-NMGiQkBMAB0A2hF8IBByhITOpKfkUlbsXPFZeujm-a-KH5pucCZ0gXYUZSEgtZcEIMe5QUrbAzCKE4qqYDd2iiXZcMGlc5Ljhtu9XxQue4EFgDJofye2nSIBABm44x2dav_XRXNP9Kfslws0IpybL108tKN823WckZ_cbrp-Vy2Q82azMmKRdlTLSpb0zyvjlN2LKM1WLxKNwuyZhsbwnGxHsjHhPvjfBRXJ0pao5ZjkhS3xBXlZ9wLu6KBKeoyrh6u_0B?type=png, intentando con Kroki...
-2026-05-04 11:56:10,830 [INFO] PNG generado con Kroki (intento 1)
-2026-05-04 11:56:10,837 [INFO] Diagrama Mermaid: 58 líneas, 2767 caracteres
-2026-05-04 11:56:13,798 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:nZZtb-o2FMe_isWre6VxdUMCtHuxjQYqofUCA8SulPWF65hglMSZ43DbRf3uO3H8gNe-qIbUljo-v_PwP_ZJOyA8pYOf0SATuDqh_fyvEsFnt59t958S9efxMxoOf0GbQ5AcqGBHRrBAWJATu3CUUkR4eWRZIzBhvESz_Z8oViuPPQrstP2onWmr3gTRZ1ZLil4QJoTW7Cmnv74aoxEYoRVXpovtNkjuWYlz9g9GleCwG57AY6nCQVQILpCkpGSEa7-dUW-9mn9K4NfjZ4-9YzqsMHmgVKALFgxDCLXLCVyIRuIa5Zzg7skL2p2woBvOSmnTCzUnardqs9vi8qpdYpGf2Oj_JDYyiXlQndHie5DMngQTaD7cfxvezYaghxQ8R994ySTwNoIfWZcPLd8mBOYa4_RaPBOav1UJtvjJhB9IJvwy-RK4VEI_FY20qWhxTvyM0ZwTtCyP3MoST1F8g-JbG7mGfY98q6agpazBTLKKg756RUk6yyUGXe_wGVtMpDHjK4yuma3hEKVYctUstKhyilNeW8BYAZZrI4Q5LQ80w2fe9dE9F0WTQ8vBf-tGVo0pPxhp41HbP3B1RxUWUMaaCCbhvBkZYKsvQ_RBGSInQ-TLoJFahuU6TBZnSqDoAhWYCMiEFRWj4EDHOEQ0ZwV4FUjQDI61gMQqQS_MlgUomhYlswx2wV7C86YoQcoUTAuIrkY1zZryP9JZQh_mbhMkm64UBKfYlh9iWFxw3gCW1rJbwER2VecI4Oqr5oC95ozahbGGzqAUHSk5YSUqRFhzU2LYeVXi3SZM7pq6uwfhp6LQQXCSjLhzljHdW8pp_egxdE13m-hDjKUO3VFCbT9uY2tIuhMOxXDxmkqNzcLYS2CSbHuZXLVqVl6HYoXt2KxslFol7MoaBppQG8_EaOJ5smlOk_WTpCWcoxz8qdrq46DuH-MxhQvGKGnRU8U4zK_lNqeXQ6P93cBA6kJXPdOdbm0KJtrUGzoSIqeobo7sDIW4HE25YNtVdQ7z22TR12QI9Yee6nxwdI_hrnCZayOd6GEetotnSLTupiDhQlAisXMQ-g68ZYuI2llFc-WOlSRvui8G1eVMHS96nxd5vHF7r_r5BT5FASigsn68of6Juv5m98uNI4_fJ4898qSNr2Gykw7DLO9kVNPC8Sbv8yYeb9oeujL37xBwN9Dnri1FQ7qLLkfr3x1v-j5v6vFunIJxX0DXGremq76-PQS28e3uG7vbttZXsxS0fzQ0xSVcim6sqKHgmtkFHgReiIG_bo9m4F9Sq73nxQ4bw4Xn3nkLvGVNXe1H7UaPgmM_G_oDr4YBXDP6FeOKet3cqz0MgPLC1PXPchSvt9tFvF8jjE5iiEX2G5b4B375Qnih-kHQigtoB5yem9KWXkNtTJEHhSm03qL9Il4t43fJlhJq-_GVfjnPrq-TB57V6I7L7rp584oDng3BLIzN_Bv8hAYFFRBRCq_F7UCeaKFekFN6xE0uB6-v_wI=?type=png, intentando con Kroki...
-2026-05-04 11:56:19,843 [INFO] PNG generado con Kroki (intento 1)
-2026-05-04 12:37:25,387 [INFO] Archivo procesado: D-OP-RPA-INTERNO-Legajos y Formularios-Template Guia Soporte y User.docx | Tipo: text | Tokens estimados: ~5,179
-2026-05-04 12:37:26,138 [INFO] Archivo procesado: D-OP-RPA-INTERNO-Legajos y formularios-PDD V.9.docx | Tipo: text | Tokens estimados: ~4,315
-2026-05-04 12:37:28,024 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
-2026-05-04 12:39:32,174 [INFO] Respuesta IA generada exitosamente (intento 1, 25308 chars)
-2026-05-04 12:39:32,740 [INFO] Diagrama Mermaid: 28 líneas, 955 caracteres
-2026-05-04 12:39:35,598 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:jZNRb4IwEMe_CsEXl-jDYrJMH5YQKQsJIkFkD86YBg7tBtSUkswZv_vYtRp8kNAHaK6_f-_uf-nZTHgK5sww94IeD0Zkf5ZGs1aRFUbDDf62Tyq2sFx_Y0UfOw_29ItXxslwuCjqnArGq92CsnIXP2_1BSRaBx30CmR91Ox86Tvuewc852XG9poOQhJbnmt38IGAmOYspQnjJVRa6JF5tA6tDp0HiawFJT8J5FoUk9B1OiQxCJaxBDOtDlRAwFkptdhxfcvrEDusbMr8RXEgeAIV10p_GXWm9bm8pb01SHx7uGk-_wNrjdEYj99weLjBweBO2d4eAYav_t67jUfawTs78QBdahmGQey-ZQQGsbFWjxhsar5WXMlTDqrajOX5bGDZ9it5GVVS8G-YDSaTSRtU3fQhdYd9UFVYH_LmjoKdZk2nj-CrYX1Y5WIfUln7iDRHhlmAKChLm0d-NuUBCnzuKWS0zqV5ufwB?type=png, intentando con Kroki...
-2026-05-04 12:39:38,142 [INFO] PNG generado con Kroki (intento 1)
-2026-05-04 12:39:38,146 [INFO] Diagrama Mermaid: 81 líneas, 2512 caracteres
-2026-05-04 12:39:40,642 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:fVZrb-I4FP0rFp9mpUVqQnitNLti0rBC0wICxJdstXIdA0ZJHDlONTNR__teB7_SGRapuFzfc3wfvidpB4RndPAHGpwFri7o8PhPieCzPyx2h09pt7z8drNtj0F6pIKdGMECYUEu7I2jjCLCyxM7vxivsI07A8KE0Jq95vSvd7M3Sp8oFegNC4Zho_4FPGoXCscRRvsLFnTLWSnR5qshSXa7IF2yEufsB8TxHZVc6pioEFwgSUnJCNeET0mQKsIMjsXocXh4Hn5ZDCFCKXiOnnnJJGC2gp-YioeW3qmWImwXOt2fcnpKdE4XfgV-TtCqPHE0RKKRuEbxFMUzFM8tVdT3bgpayhrcJat43WUDFpJj2QhcW9TYQ-lYbexDlGHJu1LSosopzrgDTtLFq2ACbRpZNRL46ZUSiEygAhPRtS9nRcXoD2wx03RxFvQMPoTnTVFCGhnUu4Aa16im56Z0kWvQcR-kB14ApGbnhsGOC8a6hO2W15SiEyUX3IULx9TcVPK4H6Vfmlo1Ev4qKrHqxhMEcoXsFkRC_d150f_4rkr8wXvcxtaNqN7jDLtzJ-mOnlkNVrgJXYjG-zNacyiagrCywcISTtPNq6Ql9CQHYJeNnoiuETk2cVnELD3Clc1UiZoTu8IVeTvZzXl7gKJRZXNhBQ_pM5B2fSg4ZPWmCFw9g8BS0m8QTM14iWhdUZWd8wrbxO4SLgQl0ss9GFkSXNFcHaBKCdfwVVAvLccHA2ocNZ3XwmCcwmkCQ2Fubf4On6IAolxzOqJJu-xcCMwaYTclQIscqrlYrrYe59SGaFzhC3fuUt0yLD3WGciPx2ccPLq5V7YKbqAqDNz3Jvf6Gz60cCfoN094wBikCTQbEv-MYp26Q4RuMwEhKqm3N2qf1RTpqeG1xxl1W3Zyzc5yG3i3knbMnTzdJvnFeIXp33AvM0-Rew7rzWG1_HfzNU3KN9ZNPctRvNntkviw6QokaMUFjCvOrk1p87nhQGt7QPi92aFDEq9X8UZ7JuvHTyl8qceE9_BAw-Gf6pGh19A-HcCghkqZlZT37Hum3Ud6jexT4Q4s8mAg9XoNrXD_EqbtFjbSa6TXsV4nep1aZewMcIXsXdKG0LbTOxAErWfW54F2WcHThrFVtY-GcY9vYo6LevuW2MQ30-vc6kuPJngwPGHPwfIEJq8gdDLSowg_bDioySmInGLcg0Z96Nj8M3EacQ866UNtZ2ZOCO5BZ33o3Hg8uOG_A71tWGgYOGUwJtfy8GfTqAef9e3uvMiJQz_Uvl0DQCn0GlpR6Axm9t17k2eGn32FuM3I-vHD_Bvz4Hc0KKgAGcjgdbEdyAstuhfHjJ5wk8vB-_t_?type=png, intentando con Kroki...
-2026-05-04 12:39:43,971 [INFO] PNG generado con Kroki (intento 1)
-2026-05-04 13:20:06,851 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-04 13:20:10,055 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-04 13:20:12,553 [INFO] PNG generado con Kroki (intento 1)
-2026-05-04 13:20:12,558 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-04 13:20:15,067 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-04 13:20:17,644 [INFO] PNG generado con Kroki (intento 1)
-2026-05-04 13:30:44,442 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-04 13:30:45,235 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-04 13:30:47,573 [INFO] PNG generado con Kroki (intento 1)
-2026-05-04 13:30:47,577 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-04 13:30:48,153 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-04 13:30:50,958 [INFO] PNG generado con Kroki (intento 1)
-2026-05-04 13:30:58,625 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-04 13:30:59,296 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-04 13:31:00,747 [INFO] PNG generado con Kroki (intento 1)
-2026-05-04 13:31:00,751 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-04 13:31:01,400 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-04 13:31:03,855 [INFO] PNG generado con Kroki (intento 1)
-2026-05-04 13:34:00,313 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-04 13:34:00,701 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-04 13:34:03,450 [INFO] PNG generado con Kroki (intento 1)
-2026-05-04 13:34:03,452 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-04 13:34:03,782 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-04 13:34:05,597 [INFO] PNG generado con Kroki (intento 1)
-2026-05-04 13:34:53,663 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-04 13:34:54,233 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-04 13:34:56,591 [INFO] PNG generado con Kroki (intento 1)
-2026-05-04 13:34:56,595 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-04 13:34:57,156 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-04 13:34:59,443 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:02:36,347 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-05 11:02:38,227 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-05 11:02:40,841 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:02:40,844 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-05 11:02:42,550 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-05 11:02:44,983 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:06:51,806 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-05 11:06:52,606 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-05 11:06:56,556 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:06:56,560 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-05 11:06:57,312 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-05 11:07:00,315 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:08:24,938 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-05 11:08:25,886 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-05 11:08:28,098 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:08:28,102 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-05 11:08:28,873 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-05 11:08:31,981 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:08:45,825 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-05 11:08:46,565 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-05 11:08:48,844 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:08:48,848 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-05 11:08:49,548 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-05 11:08:52,363 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:10:29,197 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-05 11:10:30,065 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-05 11:10:31,864 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:10:31,866 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-05 11:10:32,612 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-05 11:10:35,673 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:10:43,799 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-05 11:10:44,576 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-05 11:10:46,226 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:10:46,229 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-05 11:10:46,940 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-05 11:10:50,863 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:15:51,529 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-05 11:15:52,453 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-05 11:15:55,007 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:15:55,010 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-05 11:15:55,717 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-05 11:15:58,200 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:20:10,212 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-05 11:20:10,524 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-05 11:20:12,416 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:20:12,420 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-05 11:20:12,773 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-05 11:20:14,624 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:33:20,534 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-05 11:33:21,493 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-05 11:33:23,900 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:33:23,903 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-05 11:33:24,550 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-05 11:33:27,349 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:34:30,279 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-05 11:34:31,028 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-05 11:34:32,813 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:34:32,816 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-05 11:34:33,466 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-05 11:34:35,885 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:37:43,393 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-05 11:37:43,985 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-05 11:37:46,723 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:37:46,727 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-05 11:37:47,447 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-05 11:37:50,189 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:42:25,892 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-05 11:42:26,692 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-05 11:42:28,995 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:42:28,997 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-05 11:42:29,615 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-05 11:42:31,921 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:43:04,322 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-05 11:43:04,890 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-05 11:43:07,147 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:43:07,150 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-05 11:43:07,587 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-05 11:43:10,377 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:45:32,199 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-05 11:45:33,009 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-05 11:45:35,836 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:45:35,838 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-05 11:45:36,581 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-05 11:45:39,818 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:46:56,546 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-05 11:46:57,133 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-05 11:47:00,074 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:47:00,098 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-05 11:47:00,737 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-05 11:47:03,899 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:47:36,605 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-05 11:47:37,316 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-05 11:47:39,044 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:47:39,048 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-05 11:47:39,619 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-05 11:47:41,929 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:47:49,184 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-05 11:47:49,796 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-05 11:47:51,474 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:47:51,479 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-05 11:47:52,124 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-05 11:47:54,925 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:48:05,116 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-05 11:48:05,763 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-05 11:48:08,708 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:48:08,710 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-05 11:48:09,430 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-05 11:48:11,784 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:48:19,654 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-05 11:48:20,267 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-05 11:48:22,242 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:48:22,244 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-05 11:48:22,936 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-05 11:48:25,382 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:49:01,463 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-05 11:49:02,039 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-05 11:49:03,566 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 11:49:03,568 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-05 11:49:04,146 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-05 11:49:06,500 [INFO] PNG generado con Kroki (intento 1)
-2026-05-05 13:58:07,977 [ERROR] Fallo al parsear JSON: 'NoneType' object has no attribute 'replace'
-2026-05-06 11:19:00,463 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-06 11:19:02,632 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:VZFBawMhEIX_inhKoIGE3HoopGxTegnLdunF3cOgL8lC1EXNoYT89-o0SbsXnfHxvXnqRWpvIJ-FPAQaj6KtOvfZbpp2pnjr52KxeBENNEY9eKduVXdeLvdrJwxE7UNREMW3qCkUBSuLFHzsO_cg2adC1BQOpO5FMWgw-pCY3_rE1EMuUB28RiQ7wCWvJl3BmRE6T_jYZHSqF_6LToMhTn8v_8VvEM-nRMaX-a8UUQ4r-s3xh96egZOqdziEqU2NmIj7FbGnhePrM8H0266aqbz0c_kkpEWwNJj89BeZjrD8CQZ7ymnk9foD?type=png, intentando con Kroki...
-2026-05-06 11:20:05,206 [ERROR] Kroki falló: 504 Server Error: Gateway Timeout for url: https://kroki.io/mermaid/png
-2026-05-06 11:20:05,206 [ERROR] Todos los servicios de Mermaid fallaron
-2026-05-06 11:20:05,210 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-06 11:20:06,335 [WARNING] mermaid.ink falló: 400 Client Error: Bad Request for url: https://mermaid.ink/img/pako:bVTLbtswEPyVhU8JkKBxgvbQQwo3TloDaRA4botC9mEjrR0CEimQlJEH8u8dkpIlu71IlLg7Ozv7eBvlppDRZxptLNdPtJgu9cNiMl8cZfG1OqbT00sqJL8pefO2bM7OHtfXz8p5Ibb5k9oaWuPmy_tSt0ZwoIdgKEX0nUve1GLZZrNCtFdrlbOlutHeAJdyTrYFr_Yg7kz0nmmVK5MtTBWcjM1VMF9faPiWVCRfpg_AKUUXbJUBzi5mxLhiu-F7tlxl8Wh31BG_ZhtBxpV4axycU8gDz6Xuz_HqwZQw803xWx6z9gPIVkAS4vxSDt-OXugetBQSF0eiCdYb8Ygy9O80vnaeC9OqfGWqupTwoxU33Q60uXYhxyy9LH2kSmk6pSrl80zjc9pKLiGnZPMP8QPcYdmm4vKQ8QRSZd1Hr9wLlaqqFf7gopaQqpcKuaMMIeDQPeLdSu4by7cX4-zKaNeUQa1YSy69qpjKZAAFuQxKwRI4vdseqxvjjRvQWodvSOhQ0Z_zW9qIRr6xp_ZcUk_5oFeCSOfQWUgEjaQ01Ch512ahH3rzrlDfMQBtmf4w1dZA5aAhaPcpwfwTVeLEtQUMXocy_4CgbOeiQpDCZHPZwCpQyk1lIEZ7sdpD6BpAb1GB2SRLh1aFl0Coqj0xzSbkZJMoaWKNKSq7kYGihi7OAXzAIXWJ2swgRYZ3E7v3f8p08ds5j8zNXNwgCyux1IU5CQkBKEwoKGq1DfOL-Td6rVi_chzbHcSQBIYlHXa7SOlWfZwCSAk37nZQGIJ-f_TFG97uLyjXgFn2LfYMekEAFpMcc-SPSzBmNCKX6hUWX9lJCDtlHzdGi5D6PIyFvGIsMSBK9yPjqDRhSTnUwUNV_LjsGiQ0euuXCns3PcrwWB2PTmhUia1YFdjSbyP_JFXc14WsGcqO3t__Ag==?type=png, intentando con Kroki...
-2026-05-06 11:21:08,086 [ERROR] Kroki falló: 504 Server Error: Gateway Timeout for url: https://kroki.io/mermaid/png
-2026-05-06 11:21:08,086 [ERROR] Todos los servicios de Mermaid fallaron
-2026-05-06 11:46:27,058 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-06 11:46:27,081 [ERROR] Graphviz no está instalado. Agregá 'graphviz' a packages.txt en Streamlit Cloud.
-2026-05-06 11:46:27,083 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-06 11:46:27,101 [ERROR] Graphviz no está instalado. Agregá 'graphviz' a packages.txt en Streamlit Cloud.
-2026-05-06 11:53:09,897 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-06 11:53:13,671 [INFO] PNG generado con Graphviz local (12911 bytes)
-2026-05-06 11:53:13,673 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-06 11:53:14,928 [INFO] PNG generado con Graphviz local (74202 bytes)
-2026-05-06 11:59:41,120 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-06 11:59:42,145 [INFO] PNG generado con Graphviz local (14622 bytes)
-2026-05-06 11:59:42,147 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-06 11:59:44,923 [INFO] PNG generado con Graphviz local (76766 bytes)
-2026-05-06 12:00:31,994 [INFO] Diagrama Mermaid: 16 líneas, 783 caracteres
-2026-05-06 12:00:32,707 [INFO] PNG generado con Graphviz local (16892 bytes)
-2026-05-06 12:00:32,709 [INFO] Diagrama Mermaid: 28 líneas, 1203 caracteres
-2026-05-06 12:00:33,778 [INFO] PNG generado con Graphviz local (112884 bytes)
-2026-05-07 14:32:28,336 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-07 14:32:31,016 [INFO] PNG generado con Graphviz local (14622 bytes)
-2026-05-07 14:32:31,017 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-07 14:32:31,990 [INFO] PNG generado con Graphviz local (76766 bytes)
-2026-05-07 17:18:25,608 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-07 17:18:29,254 [INFO] PNG generado con Graphviz local (14622 bytes)
-2026-05-07 17:18:29,256 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-07 17:18:30,112 [INFO] PNG generado con Graphviz local (76766 bytes)
-2026-05-08 11:50:28,261 [INFO] Diagrama Mermaid: 7 líneas, 333 caracteres
-2026-05-08 11:50:31,894 [INFO] PNG generado con Graphviz local (14622 bytes)
-2026-05-08 11:50:31,896 [INFO] Diagrama Mermaid: 25 líneas, 1307 caracteres
-2026-05-08 11:50:32,743 [INFO] PNG generado con Graphviz local (76766 bytes)
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\screens\screen_verify.py", line 46, in screen_verify
+    sanitized = sanitize_none(st.session_state.response)
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\screens\screen_verify.py", line 89, in sanitize_none
+    return {k: sanitize_none(v) for k, v in data.items()}
+               ~~~~~~~~~~~~~^^^
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\screens\screen_verify.py", line 91, in sanitize_none
+    return [sanitize_none(i) for i in data]
+            ~~~~~~~~~~~~~^^^
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\screens\screen_verify.py", line 89, in sanitize_none
+    return {k: sanitize_none(v) for k, v in data.items()}
+               ~~~~~~~~~~~~~^^^
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\screens\screen_verify.py", line 86, in sanitize_none
+    if "inputsProceso" in data:
+       ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'int' is not a container or iterable
+
+2026-05-22 10:28:25,686 [INFO] Diagrama Mermaid: 16 líneas, 783 caracteres
+2026-05-22 10:28:26,259 [INFO] PNG generado con Graphviz local (16892 bytes)
+2026-05-22 10:28:26,260 [INFO] Diagrama Mermaid: 28 líneas, 1203 caracteres
+2026-05-22 10:28:26,878 [INFO] PNG generado con Graphviz local (112884 bytes)
+2026-05-22 14:10:50,277 [INFO] Saltando archivo no soportado dentro del zip: bot-command-messagebox-3.8.1.jar
+2026-05-22 14:10:50,290 [INFO] Saltando archivo no soportado dentro del zip: bot-command-table-4.8.0.jar
+2026-05-22 14:10:50,290 [INFO] Saltando archivo no soportado dentro del zip: bot-command-table-4.10.0.jar
+2026-05-22 14:10:50,290 [INFO] Saltando archivo no soportado dentro del zip: bot-command-list-2.15.0.jar
+2026-05-22 14:10:50,291 [INFO] Saltando archivo no soportado dentro del zip: bot-command-system-3.12.0.jar
+2026-05-22 14:10:50,291 [INFO] Saltando archivo no soportado dentro del zip: bot-command-task-2.7.2-20230316-160508.jar
+2026-05-22 14:10:50,291 [INFO] Saltando archivo no soportado dentro del zip: bot-command-window-5.14.1.jar
+2026-05-22 14:10:50,291 [INFO] Saltando archivo no soportado dentro del zip: bot-command-boolean-2.11.0.jar
+2026-05-22 14:10:50,291 [INFO] Saltando archivo no soportado dentro del zip: bot-command-comment-2.17.0.jar
+2026-05-22 14:10:50,291 [INFO] Saltando archivo no soportado dentro del zip: bot-command-file-6.11.0.jar
+2026-05-22 14:10:50,303 [INFO] Saltando archivo no soportado dentro del zip: bot-command-boolean-2.12.0.jar
+2026-05-22 14:10:50,304 [INFO] Saltando archivo no soportado dentro del zip: bot-command-step-2.7.0.jar
+2026-05-22 14:10:50,304 [INFO] Saltando archivo no soportado dentro del zip: bot-command-dictionary-3.12.0.jar
+2026-05-22 14:10:50,304 [INFO] Saltando archivo no soportado dentro del zip: bot-command-dictionary-3.14.0.jar
+2026-05-22 14:10:50,304 [INFO] Saltando archivo no soportado dentro del zip: bot-command-sharepoint-2.4.0.jar
+2026-05-22 14:10:50,304 [INFO] Saltando archivo no soportado dentro del zip: bot-command-system-3.17.0.jar
+2026-05-22 14:10:50,304 [INFO] Saltando archivo no soportado dentro del zip: bot-command-number-3.9.1.jar
+2026-05-22 14:10:50,304 [INFO] Saltando archivo no soportado dentro del zip: bot-command-folder-6.12.1.jar
+2026-05-22 14:10:50,304 [INFO] Saltando archivo no soportado dentro del zip: bot-command-datetime-2.16.1.jar
+2026-05-22 14:10:50,304 [INFO] Saltando archivo no soportado dentro del zip: bot-command-msexcel-6.23.14.jar
+2026-05-22 14:10:50,304 [INFO] Saltando archivo no soportado dentro del zip: bot-command-number-3.10.0.jar
+2026-05-22 14:10:50,304 [INFO] Saltando archivo no soportado dentro del zip: bot-command-list-2.13.0.jar
+2026-05-22 14:10:50,304 [INFO] Saltando archivo no soportado dentro del zip: bot-command-string-5.7.1.jar
+2026-05-22 14:10:50,305 [INFO] Saltando archivo no soportado dentro del zip: bot-command-delay-3.8.0.jar
+2026-05-22 14:10:50,305 [INFO] Saltando archivo no soportado dentro del zip: bot-command-step-2.5.0-20230105-135537.jar
+2026-05-22 14:10:50,305 [INFO] Saltando archivo no soportado dentro del zip: bot-command-task-2.10.0-20241119-100739.jar
+2026-05-22 14:10:50,305 [INFO] Saltando archivo no soportado dentro del zip: bot-command-comment-2.14.0.jar
+2026-05-22 14:10:50,305 [INFO] Saltando archivo no soportado dentro del zip: bot-command-messagebox-3.7.0.jar
+2026-05-22 14:10:50,305 [INFO] Saltando archivo no soportado dentro del zip: bot-command-poi-6.15.0.jar
+2026-05-22 14:10:50,305 [INFO] Saltando archivo no soportado dentro del zip: bot-command-messagebox-3.6.0.jar
+2026-05-22 14:10:50,305 [INFO] Saltando archivo no soportado dentro del zip: bot-command-if-3.7.14-20231116-000453.jar
+2026-05-22 14:10:50,305 [INFO] Saltando archivo no soportado dentro del zip: bot-command-msexcel-6.19.1.jar
+2026-05-22 14:10:50,305 [INFO] Saltando archivo no soportado dentro del zip: bot-command-email-3.31.1.jar
+2026-05-22 14:10:50,305 [INFO] Saltando archivo no soportado dentro del zip: bot-command-file-6.13.0.jar
+2026-05-22 14:10:50,305 [INFO] Saltando archivo no soportado dentro del zip: bot-command-string-5.11.3.jar
+2026-05-22 14:10:50,305 [INFO] Saltando archivo no soportado dentro del zip: bot-command-loop-3.8.1-20231117-175130.jar
+2026-05-22 14:10:50,305 [INFO] Saltando archivo no soportado dentro del zip: bot-command-logtofile-3.7.0.jar
+2026-05-22 14:10:50,306 [INFO] Saltando archivo no soportado dentro del zip: bot-command-loop-3.7.5-20230316-155504.jar
+2026-05-22 14:10:50,306 [INFO] Saltando archivo no soportado dentro del zip: bot-command-number-3.8.0.jar
+2026-05-22 14:10:50,306 [INFO] Saltando archivo no soportado dentro del zip: bot-command-application-3.11.2.jar
+2026-05-22 14:10:50,306 [INFO] Saltando archivo no soportado dentro del zip: bot-command-comment-2.16.0.jar
+2026-05-22 14:10:50,306 [INFO] Saltando archivo no soportado dentro del zip: bot-command-if-3.8.0-20241115-115929.jar
+2026-05-22 14:10:50,306 [INFO] Saltando archivo no soportado dentro del zip: bot-command-step-2.6.0.jar
+2026-05-22 14:10:50,306 [INFO] Saltando archivo no soportado dentro del zip: bot-command-loop-3.10.0-20251030-061555.jar
+2026-05-22 14:10:50,306 [INFO] Saltando archivo no soportado dentro del zip: bot-command-error-handler-2.13.0-20241115-120032.jar
+2026-05-22 14:10:50,306 [INFO] Saltando archivo no soportado dentro del zip: bot-command-datetime-2.14.0.jar
+2026-05-22 14:10:50,306 [INFO] Saltando archivo no soportado dentro del zip: bot-command-error-handler-2.11.3-20230316-162433.jar
+2026-05-22 14:10:50,306 [INFO] Saltando archivo no soportado dentro del zip: bot-command-error-handler-2.12.1-20231117-175338.jar
+2026-05-22 14:10:50,306 [INFO] Saltando archivo no soportado dentro del zip: bot-command-delay-3.9.1.jar
+2026-05-22 14:10:50,307 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/ATW_Legajos y formularios/ATW_Legajos y formularios_Report
+2026-05-22 14:10:50,307 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/Public Tasks/ATW_IDBOT_Public_Logs
+2026-05-22 14:10:50,307 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/ATW_Legajos y formularios/ATW_Legajos y Formularios_Main_V1
+2026-05-22 14:10:50,307 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/ATW_Legajos y formularios/ATW_Legajos y formularios_Setup
+2026-05-22 14:10:50,307 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/ATW_Legajos y formularios/ATW_Legajos y formularios_Sharepoint
+2026-05-22 14:10:50,307 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/ATW_Legajos y formularios/ATW_Legajos y Formularios_Notificaciones
+2026-05-22 14:10:50,307 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/ATW_Legajos y formularios/ATW_Legajos y formularios_Clean
+2026-05-22 14:10:50,307 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/Public Tasks/ATW_IDBOT_Public_Config
+2026-05-22 14:10:50,307 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/ATW_Legajos y formularios/ATW_Legajos y formularios_SP_Validaciones
+2026-05-22 14:10:50,322 [INFO] Archivo procesado: manifest.json | Tipo: text | Tokens estimados: ~2,345
+2026-05-22 14:10:50,322 [INFO] ZIP procesado: Legajos.lcorbo.zip | Bloques extraídos: 1
+2026-05-22 14:10:52,734 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-22 14:11:26,566 [INFO] Respuesta IA generada exitosamente (intento 1, 8569 chars)
+2026-05-22 14:11:26,730 [INFO] Diagrama Mermaid: 21 líneas, 418 caracteres
+2026-05-22 14:11:30,152 [INFO] PNG generado con Graphviz local (26731 bytes)
+2026-05-22 14:11:30,154 [INFO] Diagrama Mermaid: 35 líneas, 996 caracteres
+2026-05-22 14:11:30,744 [INFO] PNG generado con Graphviz local (81933 bytes)
+2026-05-22 14:53:45,531 [INFO] Archivo procesado: TDD (6).xlsx | Tipo: text | Tokens estimados: ~8,151
+2026-05-22 14:53:47,466 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-22 14:54:51,460 [INFO] Respuesta IA generada exitosamente (intento 1, 14503 chars)
+2026-05-26 09:34:21,672 [INFO] Diagrama Mermaid: 16 líneas, 783 caracteres
+2026-05-26 09:34:22,680 [INFO] PNG generado con Graphviz local (16892 bytes)
+2026-05-26 09:34:22,681 [INFO] Diagrama Mermaid: 28 líneas, 1203 caracteres
+2026-05-26 09:34:23,821 [INFO] PNG generado con Graphviz local (112884 bytes)
+2026-05-26 09:38:11,562 [INFO] Imagen descartada por tamaño chico: (101, 58)
+2026-05-26 09:38:11,583 [INFO] Imagen descartada por tamaño chico: (85, 39)
+2026-05-26 09:38:11,592 [INFO] Imagen descartada por tamaño chico: (191, 52)
+2026-05-26 09:38:11,616 [INFO] Imagen descartada por tamaño chico: (104, 35)
+2026-05-26 09:38:11,638 [INFO] Imagen descartada por tamaño chico: (104, 35)
+2026-05-26 09:38:11,639 [INFO] Imagen descartada por tamaño chico: (124, 32)
+2026-05-26 09:38:11,649 [INFO] Imagen descartada por tamaño chico: (124, 32)
+2026-05-26 09:38:11,664 [INFO] Imagen descartada por tamaño chico: (104, 35)
+2026-05-26 09:38:11,666 [INFO] Imagen descartada por tamaño chico: (191, 52)
+2026-05-26 09:38:11,686 [INFO] Imagen descartada por tamaño chico: (409, 56)
+2026-05-26 09:38:11,686 [INFO] Imagen descartada por tamaño chico: (366, 34)
+2026-05-26 09:38:11,687 [INFO] Imagen descartada por tamaño chico: (415, 38)
+2026-05-26 09:38:11,687 [INFO] Imagen descartada por tamaño chico: (403, 40)
+2026-05-26 09:38:11,759 [INFO] DOCX procesado: D-OP-RPA-INTERNO-Legajos y formularios-PDD V.11.docx | Texto: ~5,286 tokens | Imágenes embebidas: 16
+2026-05-26 09:40:14,819 [INFO] Imagen descartada por tamaño chico: (101, 58)
+2026-05-26 09:40:14,835 [INFO] Imagen descartada por tamaño chico: (85, 39)
+2026-05-26 09:40:14,843 [INFO] Imagen descartada por tamaño chico: (191, 52)
+2026-05-26 09:40:14,866 [INFO] Imagen descartada por tamaño chico: (104, 35)
+2026-05-26 09:40:14,888 [INFO] Imagen descartada por tamaño chico: (104, 35)
+2026-05-26 09:40:14,889 [INFO] Imagen descartada por tamaño chico: (124, 32)
+2026-05-26 09:40:14,899 [INFO] Imagen descartada por tamaño chico: (124, 32)
+2026-05-26 09:40:14,912 [INFO] Imagen descartada por tamaño chico: (104, 35)
+2026-05-26 09:40:14,915 [INFO] Imagen descartada por tamaño chico: (191, 52)
+2026-05-26 09:40:14,936 [INFO] Imagen descartada por tamaño chico: (409, 56)
+2026-05-26 09:40:14,937 [INFO] Imagen descartada por tamaño chico: (366, 34)
+2026-05-26 09:40:14,937 [INFO] Imagen descartada por tamaño chico: (415, 38)
+2026-05-26 09:40:14,938 [INFO] Imagen descartada por tamaño chico: (403, 40)
+2026-05-26 09:40:15,010 [INFO] DOCX procesado: D-OP-RPA-INTERNO-Legajos y formularios-PDD V.11.docx | Texto: ~5,286 tokens | Imágenes embebidas: 16
+2026-05-26 09:40:18,487 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-26 09:42:50,541 [INFO] Respuesta IA generada exitosamente (intento 1, 31367 chars)
+2026-05-26 09:42:51,117 [INFO] Diagrama Mermaid: 46 líneas, 1042 caracteres
+2026-05-26 09:42:51,835 [INFO] PNG generado con Graphviz local (21446 bytes)
+2026-05-26 09:42:51,836 [INFO] Diagrama Mermaid: 80 líneas, 3536 caracteres
+2026-05-26 09:42:53,166 [INFO] PNG generado con Graphviz local (439042 bytes)
+2026-05-26 09:49:13,304 [INFO] Imagen descartada por tamaño chico: (101, 58)
+2026-05-26 09:49:13,326 [INFO] Imagen descartada por tamaño chico: (85, 39)
+2026-05-26 09:49:13,338 [INFO] Imagen descartada por tamaño chico: (191, 52)
+2026-05-26 09:49:13,369 [INFO] Imagen descartada por tamaño chico: (104, 35)
+2026-05-26 09:49:13,401 [INFO] Imagen descartada por tamaño chico: (104, 35)
+2026-05-26 09:49:13,404 [INFO] Imagen descartada por tamaño chico: (124, 32)
+2026-05-26 09:49:13,420 [INFO] Imagen descartada por tamaño chico: (124, 32)
+2026-05-26 09:49:13,441 [INFO] Imagen descartada por tamaño chico: (104, 35)
+2026-05-26 09:49:13,444 [INFO] Imagen descartada por tamaño chico: (191, 52)
+2026-05-26 09:49:13,473 [INFO] Imagen descartada por tamaño chico: (409, 56)
+2026-05-26 09:49:13,474 [INFO] Imagen descartada por tamaño chico: (366, 34)
+2026-05-26 09:49:13,476 [INFO] Imagen descartada por tamaño chico: (415, 38)
+2026-05-26 09:49:13,477 [INFO] Imagen descartada por tamaño chico: (403, 40)
+2026-05-26 09:49:13,562 [INFO] DOCX procesado: D-OP-RPA-INTERNO-Legajos y formularios-PDD V.11.docx | Texto: ~5,286 tokens | Imágenes embebidas: 16
+2026-05-26 09:49:19,261 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-26 09:52:25,300 [INFO] Respuesta IA generada exitosamente (intento 1, 39457 chars)
+2026-05-26 09:52:26,293 [INFO] Diagrama Mermaid: 45 líneas, 1606 caracteres
+2026-05-26 09:52:27,180 [INFO] PNG generado con Graphviz local (20889 bytes)
+2026-05-26 09:52:27,181 [INFO] Diagrama Mermaid: 99 líneas, 3829 caracteres
+2026-05-26 09:52:28,508 [INFO] PNG generado con Graphviz local (289652 bytes)
+2026-05-26 10:03:07,904 [INFO] Imagen descartada por tamaño chico: (101, 58)
+2026-05-26 10:03:07,926 [INFO] Imagen descartada por tamaño chico: (85, 39)
+2026-05-26 10:03:07,934 [INFO] Imagen descartada por tamaño chico: (191, 52)
+2026-05-26 10:03:07,954 [INFO] Imagen descartada por tamaño chico: (104, 35)
+2026-05-26 10:03:07,977 [INFO] Imagen descartada por tamaño chico: (104, 35)
+2026-05-26 10:03:07,979 [INFO] Imagen descartada por tamaño chico: (124, 32)
+2026-05-26 10:03:07,993 [INFO] Imagen descartada por tamaño chico: (124, 32)
+2026-05-26 10:03:08,010 [INFO] Imagen descartada por tamaño chico: (104, 35)
+2026-05-26 10:03:08,012 [INFO] Imagen descartada por tamaño chico: (191, 52)
+2026-05-26 10:03:08,032 [INFO] Imagen descartada por tamaño chico: (409, 56)
+2026-05-26 10:03:08,033 [INFO] Imagen descartada por tamaño chico: (366, 34)
+2026-05-26 10:03:08,034 [INFO] Imagen descartada por tamaño chico: (415, 38)
+2026-05-26 10:03:08,035 [INFO] Imagen descartada por tamaño chico: (403, 40)
+2026-05-26 10:03:08,115 [INFO] DOCX procesado: D-OP-RPA-INTERNO-Legajos y formularios-PDD V.11.docx | Texto: ~5,286 tokens | Imágenes embebidas: 16
+2026-05-26 10:03:12,177 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-26 10:06:13,769 [INFO] Respuesta IA generada exitosamente (intento 1, 39207 chars)
+2026-05-26 10:06:14,142 [INFO] Diagrama DOT: 1687 caracteres
+2026-05-26 10:06:14,742 [INFO] PNG generado (28268 bytes)
+2026-05-26 10:06:14,743 [INFO] Diagrama DOT: 5072 caracteres
+2026-05-26 10:06:15,707 [INFO] PNG generado (280138 bytes)
+2026-05-26 10:13:59,486 [INFO] Imagen descartada por tamaño chico: (101, 58)
+2026-05-26 10:13:59,496 [INFO] Imagen descartada por tamaño chico: (85, 39)
+2026-05-26 10:13:59,502 [INFO] Imagen descartada por tamaño chico: (191, 52)
+2026-05-26 10:13:59,515 [INFO] Imagen descartada por tamaño chico: (104, 35)
+2026-05-26 10:13:59,527 [INFO] Imagen descartada por tamaño chico: (104, 35)
+2026-05-26 10:13:59,528 [INFO] Imagen descartada por tamaño chico: (124, 32)
+2026-05-26 10:13:59,534 [INFO] Imagen descartada por tamaño chico: (124, 32)
+2026-05-26 10:13:59,541 [INFO] Imagen descartada por tamaño chico: (104, 35)
+2026-05-26 10:13:59,542 [INFO] Imagen descartada por tamaño chico: (191, 52)
+2026-05-26 10:13:59,553 [INFO] Imagen descartada por tamaño chico: (409, 56)
+2026-05-26 10:13:59,554 [INFO] Imagen descartada por tamaño chico: (366, 34)
+2026-05-26 10:13:59,554 [INFO] Imagen descartada por tamaño chico: (415, 38)
+2026-05-26 10:13:59,555 [INFO] Imagen descartada por tamaño chico: (403, 40)
+2026-05-26 10:13:59,604 [INFO] DOCX procesado: D-OP-RPA-INTERNO-Legajos y formularios-PDD V.11.docx | Texto: ~5,286 tokens | Imágenes embebidas: 16
+2026-05-26 10:14:02,535 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-26 10:17:10,911 [INFO] Imagen descartada por tamaño chico: (101, 58)
+2026-05-26 10:17:10,942 [INFO] Imagen descartada por tamaño chico: (85, 39)
+2026-05-26 10:17:10,953 [INFO] Imagen descartada por tamaño chico: (191, 52)
+2026-05-26 10:17:10,976 [INFO] Imagen descartada por tamaño chico: (104, 35)
+2026-05-26 10:17:11,005 [INFO] Imagen descartada por tamaño chico: (104, 35)
+2026-05-26 10:17:11,007 [INFO] Imagen descartada por tamaño chico: (124, 32)
+2026-05-26 10:17:11,023 [INFO] Imagen descartada por tamaño chico: (124, 32)
+2026-05-26 10:17:11,042 [INFO] Imagen descartada por tamaño chico: (104, 35)
+2026-05-26 10:17:11,046 [INFO] Imagen descartada por tamaño chico: (191, 52)
+2026-05-26 10:17:11,075 [INFO] Imagen descartada por tamaño chico: (409, 56)
+2026-05-26 10:17:11,076 [INFO] Imagen descartada por tamaño chico: (366, 34)
+2026-05-26 10:17:11,077 [INFO] Imagen descartada por tamaño chico: (415, 38)
+2026-05-26 10:17:11,078 [INFO] Imagen descartada por tamaño chico: (403, 40)
+2026-05-26 10:17:11,153 [INFO] DOCX procesado: D-OP-RPA-INTERNO-Legajos y formularios-PDD V.11.docx | Texto: ~5,286 tokens | Imágenes embebidas: 16
+2026-05-26 10:17:14,509 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-26 10:20:23,085 [INFO] Respuesta IA generada exitosamente (intento 1, 40543 chars)
+2026-05-26 10:20:23,958 [INFO] Diagrama DOT: 1808 caracteres
+2026-05-26 10:20:24,571 [INFO] PNG generado (30565 bytes)
+2026-05-26 10:20:24,572 [INFO] Diagrama DOT: 4550 caracteres
+2026-05-26 10:20:25,337 [INFO] PNG generado (244094 bytes)
+2026-05-26 10:36:20,991 [INFO] Diagrama DOT: 333 caracteres
+2026-05-26 10:36:21,182 [ERROR] Error de sintaxis DOT: Command '[WindowsPath('dot'), '-Kdot', '-Tpng']' returned non-zero exit status 1. [stderr: b"Error: <stdin>: syntax error in line 2 near 'START'\r\n"]
+2026-05-26 10:36:21,183 [ERROR] Código recibido:
+graph TD
+START([START]) --> Recepcion[Recepción de Porciones y Parámetros]
+Recepcion --> Descarga[Descarga de Reportes y Fotos]
+Descarga --> Procesamiento[Procesamiento de Fotos con IA]
+Procesamiento --> Validacion[Validación de Resultados y Base de Datos]
+Validacion --> Reporte[Generación de Pestaña Resumen]
+Reporte --> END([END])
+2026-05-26 10:36:21,184 [INFO] Diagrama DOT: 1307 caracteres
+2026-05-26 10:36:21,214 [ERROR] Error de sintaxis DOT: Command '[WindowsPath('dot'), '-Kdot', '-Tpng']' returned non-zero exit status 1. [stderr: b"Error: <stdin>: syntax error in line 2 near 'START'\r\n"]
+2026-05-26 10:36:21,214 [ERROR] Código recibido:
+graph TD
+START([START]) --> decFlag{¿Existe archivo flag?}
+decFlag -- Sí --> Recuperar[Identificar punto de caída]
+decFlag -- No --> Inicio[Tomar porción del día / calendario]
+Recuperar --> CargaParam[Cargar archivo de parámetros]
+Inicio --> CargaParam
+CargaParam --> SolicitudWeb[Solicitar reporte Visitas y Pendientes en Webget]
+SolicitudWeb --> decEstado{¿Completado?}
+decEstado -- No --> Espera[Esperar 5 min - máx 12 veces]
+Espera --> SolicitudWeb
+decEstado -- Sí --> DescargaArch[Descargar archivo y limpiar carpetas temporales]
+DescargaArch --> LecturaL31[Consultar última lectura real en L31]
+LecturaL31 --> DescargaFotos[Descargar fotos desde URL generada]
+DescargaFotos --> IterarFotos[Iterar por cada instalación]
+IterarFotos --> decHist{¿Ya procesado en últimos 6 meses?}
+decHist -- Sí --> MarcarReiterado[Registrar como reiterado]
+decHist -- No --> EnviarIA[Enviar fotos y prompt a IA según anomalía 31 o 32]
+MarcarReiterado --> SigInst[Siguiente instalación]
+EnviarIA --> RegistroRes[Re
+2026-05-26 10:36:51,157 [INFO] DOCX procesado: Transcripcion_Mapas_de_Calor.docx | Texto: ~5,466 tokens | Tablas: 0 | Imágenes: 0
+2026-05-26 10:36:53,127 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-26 10:38:26,657 [INFO] Respuesta IA generada exitosamente (intento 1, 20697 chars)
+2026-05-26 10:38:26,991 [INFO] Diagrama DOT: 946 caracteres
+2026-05-26 10:38:27,527 [INFO] PNG generado (19383 bytes)
+2026-05-26 10:38:27,528 [INFO] Diagrama DOT: 3287 caracteres
+2026-05-26 10:38:28,119 [INFO] PNG generado (104687 bytes)
+2026-05-26 10:46:21,576 [INFO] DOCX procesado: Transcripcion_Mapas_de_Calor.docx | Texto: ~5,466 tokens | Tablas: 0 | Imágenes: 0
+2026-05-26 10:46:24,222 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-26 10:48:09,220 [INFO] Respuesta IA generada exitosamente (intento 1, 21614 chars)
+2026-05-26 10:48:09,431 [INFO] Diagrama DOT: 843 caracteres
+2026-05-26 10:48:10,243 [INFO] PNG generado (17164 bytes)
+2026-05-26 10:48:10,243 [INFO] Diagrama DOT: 3731 caracteres
+2026-05-26 10:48:10,892 [INFO] PNG generado (122077 bytes)
+2026-05-26 10:59:10,610 [INFO] DOCX procesado: Transcripcion_Mapas_de_Calor.docx | Texto: ~5,466 tokens | Tablas: 0 | Imágenes: 0
+2026-05-26 10:59:12,488 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-26 11:00:47,685 [INFO] Respuesta IA generada exitosamente (intento 1, 20207 chars)
+2026-05-26 11:00:48,236 [INFO] Diagrama DOT: 847 caracteres
+2026-05-26 11:00:48,821 [INFO] PNG generado (15994 bytes)
+2026-05-26 11:00:48,822 [INFO] Diagrama DOT: 3764 caracteres
+2026-05-26 11:00:49,562 [INFO] PNG generado (167197 bytes)
+2026-05-26 11:08:50,974 [ERROR] Error al generar documento: 'RichText' object is not iterable
+Traceback (most recent call last):
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\screens\screen_verify.py", line 47, in screen_verify
+    generate_docx(sanitized, None)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\utils\docx_generator.py", line 31, in generate_docx
+    buffer = generate_PDD(tpl, jsonText)
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\utils\docx_generator.py", line 111, in generate_PDD
+    tpl.render(context)
+    ~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 489, in render
+    xml_src = self.build_xml(context, jinja_env)
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 436, in build_xml
+    xml = self.render_xml_part(xml, self.docx._part, context, jinja_env)
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 313, in render_xml_part
+    dst_xml = template.render(context)
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 66, in top-level template code
+TypeError: 'RichText' object is not iterable
+
+2026-05-26 11:10:00,964 [ERROR] Error al generar documento: name 'variables_template' is not defined
+Traceback (most recent call last):
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\screens\screen_verify.py", line 47, in screen_verify
+    generate_docx(sanitized, None)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\utils\docx_generator.py", line 31, in generate_docx
+    buffer = generate_PDD(tpl, jsonText)
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\utils\docx_generator.py", line 104, in generate_PDD
+    for var in variables_template:
+               ^^^^^^^^^^^^^^^^^^
+NameError: name 'variables_template' is not defined. Did you mean: 'vvariables_template'?
+
+2026-05-26 11:10:15,474 [ERROR] Error al generar documento: 'RichText' object is not iterable
+Traceback (most recent call last):
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\screens\screen_verify.py", line 47, in screen_verify
+    generate_docx(sanitized, None)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\utils\docx_generator.py", line 31, in generate_docx
+    buffer = generate_PDD(tpl, jsonText)
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\utils\docx_generator.py", line 126, in generate_PDD
+    tpl.render(context)
+    ~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 489, in render
+    xml_src = self.build_xml(context, jinja_env)
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 436, in build_xml
+    xml = self.render_xml_part(xml, self.docx._part, context, jinja_env)
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 313, in render_xml_part
+    dst_xml = template.render(context)
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 66, in top-level template code
+TypeError: 'RichText' object is not iterable
+
+2026-05-26 11:12:25,327 [ERROR] Error al generar documento: 'NoneType' object has no attribute '_element'
+Traceback (most recent call last):
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\screens\screen_verify.py", line 47, in screen_verify
+    generate_docx(sanitized, None)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\utils\docx_generator.py", line 31, in generate_docx
+    buffer = generate_PDD(tpl, jsonText)
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\utils\docx_generator.py", line 109, in generate_PDD
+    xml_src = tpl.get_xml()
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 79, in get_xml
+    return self.xml_to_string(self.docx._element.body)
+                              ^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute '_element'
+
+2026-05-26 11:12:56,969 [ERROR] Error al generar documento: 'NoneType' object has no attribute '_element'
+Traceback (most recent call last):
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\screens\screen_verify.py", line 47, in screen_verify
+    generate_docx(sanitized, None)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\utils\docx_generator.py", line 31, in generate_docx
+    buffer = generate_PDD(tpl, jsonText)
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\utils\docx_generator.py", line 109, in generate_PDD
+    xml_src = tpl.get_xml()
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 79, in get_xml
+    return self.xml_to_string(self.docx._element.body)
+                              ^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute '_element'
+
+2026-05-26 11:14:50,918 [ERROR] Error al generar documento: 'RichText' object is not iterable
+Traceback (most recent call last):
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\screens\screen_verify.py", line 47, in screen_verify
+    generate_docx(sanitized, None)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\utils\docx_generator.py", line 31, in generate_docx
+    buffer = generate_PDD(tpl, jsonText)
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\utils\docx_generator.py", line 143, in generate_PDD
+    tpl.render(context)
+    ~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 489, in render
+    xml_src = self.build_xml(context, jinja_env)
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 436, in build_xml
+    xml = self.render_xml_part(xml, self.docx._part, context, jinja_env)
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 313, in render_xml_part
+    dst_xml = template.render(context)
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 66, in top-level template code
+TypeError: 'RichText' object is not iterable
+
+2026-05-26 11:15:23,481 [ERROR] Error al generar documento: 'RichText' object is not iterable
+Traceback (most recent call last):
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\screens\screen_verify.py", line 47, in screen_verify
+    generate_docx(sanitized, None)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\utils\docx_generator.py", line 31, in generate_docx
+    buffer = generate_PDD(tpl, jsonText)
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\utils\docx_generator.py", line 111, in generate_PDD
+    tpl.render(context)
+    ~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 489, in render
+    xml_src = self.build_xml(context, jinja_env)
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 436, in build_xml
+    xml = self.render_xml_part(xml, self.docx._part, context, jinja_env)
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 313, in render_xml_part
+    dst_xml = template.render(context)
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 66, in top-level template code
+TypeError: 'RichText' object is not iterable
+
+2026-05-26 11:22:46,886 [ERROR] Error al generar documento: 'RichText' object is not iterable
+Traceback (most recent call last):
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\screens\screen_verify.py", line 47, in screen_verify
+    generate_docx(sanitized, None)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\utils\docx_generator.py", line 31, in generate_docx
+    buffer = generate_PDD(tpl, jsonText)
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\utils\docx_generator.py", line 105, in generate_PDD
+    tpl.render(context)
+    ~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 489, in render
+    xml_src = self.build_xml(context, jinja_env)
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 436, in build_xml
+    xml = self.render_xml_part(xml, self.docx._part, context, jinja_env)
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 313, in render_xml_part
+    dst_xml = template.render(context)
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 66, in top-level template code
+TypeError: 'RichText' object is not iterable
+
+2026-05-26 11:26:28,678 [ERROR] Error al generar documento: 'RichText' object is not iterable
+Traceback (most recent call last):
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\screens\screen_verify.py", line 47, in screen_verify
+    generate_docx(sanitized, None)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\utils\docx_generator.py", line 30, in generate_docx
+    buffer = generate_PDD(tpl, jsonText)
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\utils\docx_generator.py", line 103, in generate_PDD
+    tpl.render(context)
+    ~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 489, in render
+    xml_src = self.build_xml(context, jinja_env)
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 436, in build_xml
+    xml = self.render_xml_part(xml, self.docx._part, context, jinja_env)
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 313, in render_xml_part
+    dst_xml = template.render(context)
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 66, in top-level template code
+TypeError: 'RichText' object is not iterable
+
+2026-05-26 11:30:37,946 [ERROR] Error al generar documento: 'RichText' object is not iterable
+Traceback (most recent call last):
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\screens\screen_verify.py", line 47, in screen_verify
+    generate_docx(sanitized, None)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\utils\docx_generator.py", line 30, in generate_docx
+    buffer = generate_PDD(tpl, jsonText)
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\utils\docx_generator.py", line 103, in generate_PDD
+    tpl.render(context)
+    ~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 489, in render
+    xml_src = self.build_xml(context, jinja_env)
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 436, in build_xml
+    xml = self.render_xml_part(xml, self.docx._part, context, jinja_env)
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 313, in render_xml_part
+    dst_xml = template.render(context)
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 66, in top-level template code
+TypeError: 'RichText' object is not iterable
+
+2026-05-26 11:31:15,755 [INFO] DOCX procesado: Transcripcion_Mapas_de_Calor.docx | Texto: ~5,466 tokens | Tablas: 0 | Imágenes: 0
+2026-05-26 11:31:18,435 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-26 11:32:59,622 [INFO] Respuesta IA generada exitosamente (intento 1, 21633 chars)
+2026-05-26 11:33:00,013 [INFO] Diagrama DOT: 943 caracteres
+2026-05-26 11:33:00,806 [INFO] PNG generado (24504 bytes)
+2026-05-26 11:33:00,807 [INFO] Diagrama DOT: 3082 caracteres
+2026-05-26 11:33:01,478 [INFO] PNG generado (107460 bytes)
+2026-05-26 11:33:11,807 [ERROR] Error al generar documento: 'RichText' object is not iterable
+Traceback (most recent call last):
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\screens\screen_verify.py", line 47, in screen_verify
+    generate_docx(sanitized, None)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\utils\docx_generator.py", line 30, in generate_docx
+    buffer = generate_PDD(tpl, jsonText)
+  File "C:\Users\mvidaurre\Desktop\RPA\documentAssistant\utils\docx_generator.py", line 103, in generate_PDD
+    tpl.render(context)
+    ~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 489, in render
+    xml_src = self.build_xml(context, jinja_env)
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 436, in build_xml
+    xml = self.render_xml_part(xml, self.docx._part, context, jinja_env)
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\docxtpl\template.py", line 313, in render_xml_part
+    dst_xml = template.render(context)
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\mvidaurre\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 66, in top-level template code
+TypeError: 'RichText' object is not iterable
+
+2026-05-26 11:47:16,045 [INFO] DOCX procesado: Transcripcion_Mapas_de_Calor.docx | Texto: ~5,466 tokens | Tablas: 0 | Imágenes: 0
+2026-05-26 11:47:18,031 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-26 11:49:11,873 [INFO] Respuesta IA generada exitosamente (intento 1, 24199 chars)
+2026-05-26 11:49:12,342 [INFO] Diagrama DOT: 1045 caracteres
+2026-05-26 11:49:13,011 [INFO] PNG generado (30477 bytes)
+2026-05-26 11:49:13,012 [INFO] Diagrama DOT: 4313 caracteres
+2026-05-26 11:49:13,886 [INFO] PNG generado (182991 bytes)
+2026-05-26 12:20:34,748 [INFO] DOCX procesado: D-OP-RPA-INTERNO-Legajos y formularios-PDD V.11.docx | Texto: ~5,286 tokens | Tablas: 11 | Imágenes: 16
+2026-05-26 12:20:38,074 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-26 12:22:59,873 [INFO] Respuesta IA generada exitosamente (intento 1, 28355 chars)
+2026-05-26 12:23:00,380 [INFO] Diagrama DOT: 846 caracteres
+2026-05-26 12:23:01,415 [INFO] PNG generado (16725 bytes)
+2026-05-26 12:23:01,417 [INFO] Diagrama DOT: 5492 caracteres
+2026-05-26 12:23:02,339 [INFO] PNG generado (295234 bytes)
+2026-05-26 12:23:38,224 [INFO] DOCX procesado: Transcripcion_Mapas_de_Calor.docx | Texto: ~5,466 tokens | Tablas: 0 | Imágenes: 0
+2026-05-26 12:23:40,774 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-26 12:25:11,445 [INFO] Respuesta IA generada exitosamente (intento 1, 19533 chars)
+2026-05-26 12:25:11,786 [INFO] Diagrama DOT: 659 caracteres
+2026-05-26 12:25:12,342 [INFO] PNG generado (14110 bytes)
+2026-05-26 12:25:12,343 [INFO] Diagrama DOT: 3219 caracteres
+2026-05-26 12:25:13,220 [INFO] PNG generado (115640 bytes)
+2026-05-26 14:58:02,837 [INFO] DOCX procesado: Transcripcion_Mapas_de_Calor.docx | Texto: ~5,466 tokens | Tablas: 0 | Imágenes: 0
+2026-05-26 14:58:05,001 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-26 14:59:35,360 [INFO] Respuesta IA generada exitosamente (intento 1, 20194 chars)
+2026-05-26 14:59:35,731 [INFO] Diagrama DOT: 803 caracteres
+2026-05-26 14:59:40,295 [INFO] PNG generado (26095 bytes)
+2026-05-26 14:59:40,297 [INFO] Diagrama DOT: 4116 caracteres
+2026-05-26 14:59:41,422 [INFO] PNG generado (156145 bytes)
+2026-05-26 15:14:12,093 [INFO] DOCX procesado: D-OP-RPA-DDS-Mapa de Calor-PDD(ES)-v3 1.docx | Texto: ~4,644 tokens | Tablas: 14 | Imágenes: 22
+2026-05-26 15:14:16,303 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-26 15:14:50,049 [INFO] DOCX procesado: Transcripcion_Mapas_de_Calor.docx | Texto: ~5,466 tokens | Tablas: 0 | Imágenes: 0
+2026-05-26 15:14:52,954 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-26 15:16:04,037 [INFO] Respuesta IA generada exitosamente (intento 1, 16017 chars)
+2026-05-26 15:16:04,294 [INFO] Diagrama DOT: 604 caracteres
+2026-05-26 15:16:04,934 [INFO] PNG generado (12952 bytes)
+2026-05-26 15:16:04,935 [INFO] Diagrama DOT: 2788 caracteres
+2026-05-26 15:16:05,643 [INFO] PNG generado (87974 bytes)
+2026-05-26 15:33:42,472 [INFO] Diagrama DOT: 783 caracteres
+2026-05-26 15:33:42,684 [ERROR] Error de sintaxis DOT: Command '[WindowsPath('dot'), '-Kdot', '-Tpng']' returned non-zero exit status 1. [stderr: b"Error: <stdin>: syntax error in line 2 near 'START'\r\n"]
+2026-05-26 15:33:42,685 [ERROR] Código recibido:
+graph TD
+START([START])-->main[ATW_Legajos y Formularios_Main_V1]
+main-->setup[ATW_Legajos y Formularios_Setup]
+setup-->config[ATW_Legajos y Formularios_Config]
+config-->sharepoint[ATW_Legajos y formularios_Sharepoint]
+sharepoint-->val[ATW_Legajos y formularios_SP_Validaciones]
+val-->report[ATW_Legajos y formularios_Report]
+report-->notif[ATW_Legajos y formularios_Notificaciones]
+notif-->END([END])
+style main fill:#ADD8E6,stroke:#333,stroke-width:2px
+style setup fill:#ADD8E6,stroke:#333,stroke-width:2px
+style config fill:#ADD8E6,stroke:#333,stroke-width:2px
+style notif fill:#ADD8E6,stroke:#333,stroke-width:2px
+style sharepoint fill:#FFFFE0,stroke:#333,stroke-width:2px
+style val fill:#FFFFE0,stroke:#333,stroke-width:2px
+style report fill:#FFFFE0,stroke:#333,stroke-width:2px
+2026-05-26 15:33:42,686 [INFO] Diagrama DOT: 1203 caracteres
+2026-05-26 15:33:42,713 [ERROR] Error de sintaxis DOT: Command '[WindowsPath('dot'), '-Kdot', '-Tpng']' returned non-zero exit status 1. [stderr: b"Error: <stdin>: syntax error in line 2 near 'START'\r\n"]
+2026-05-26 15:33:42,713 [ERROR] Código recibido:
+graph TD
+START([START])-->readExcel[Lectura Archivo Excel y Extracción de Datos]
+readExcel-->loopEmp[Loop por cada Empleado Input]
+loopEmp-->hasData{¿Empleado tiene Nombre o Fecha AFIP?}
+hasData-- NO -->nextEmp[Saltar Empleado]
+hasData-- SI -->findFolder{¿Posee carpeta en SharePoint?}
+findFolder-- NO -->writeNoFolder[Escribe 'No posee carpeta' en Output]
+writeNoFolder-->nextEmp
+findFolder-- SI -->readSPDocs[Lee y almacena Documentos Alta/Baja de SP]
+readSPDocs-->loopDocs[Loop recorrer docs requeridos]
+loopDocs-->existDoc{¿Documento existe en SP?}
+existDoc-- NO -->writeMissing[Registrar 'Archivo Faltante']
+existDoc-- SI -->checkVF{¿Posee sufijo -vf?}
+checkVF-- NO -->writeErr[Registrar 'Erróneo']
+checkVF-- SI -->checkExt{¿Extensión y Fecha coinciden?}
+checkExt-- NO -->writeErr
+checkExt-- SI -->writeOK[Registrar 'Correcto']
+writeMissing-->nextDoc[Siguiente Documento]
+writeErr-->nextDoc
+writeOK-->nextDoc
+nextDoc-->moreDocs{¿Quedan documentos?}
+moreDocs-- SI -->loopDocs
+moreDocs-- NO -->nex
+2026-05-26 16:39:47,066 [INFO] Filtrando del prompt las keys: ['contactos', 'diagramaBajoNivel']
+2026-05-26 16:39:47,068 [WARNING] No se pudo parsear el JSON del prompt: Extra data: line 61 column 1 (char 5611)
+2026-05-26 16:39:47,069 [INFO] Prompt final: ~3,622 tokens estimados
+2026-05-26 16:41:46,635 [INFO] Filtrando del prompt las keys: ['contactos', 'diagramaBajoNivel', 'ejecucion']
+2026-05-26 16:41:46,635 [WARNING] No se pudo parsear el JSON del prompt: Extra data: line 61 column 1 (char 5611)
+2026-05-26 16:41:46,636 [INFO] Prompt final: ~3,622 tokens estimados
+2026-05-26 16:41:46,788 [INFO] DOCX procesado: Transcripcion_Mapas_de_Calor.docx | Texto: ~5,466 tokens | Tablas: 0 | Imágenes: 0
+2026-05-26 16:41:48,993 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-26 16:43:01,931 [INFO] Respuesta IA generada exitosamente (intento 1, 15940 chars)
+2026-05-26 16:43:02,197 [INFO] Diagrama DOT: 779 caracteres
+2026-05-26 16:43:05,076 [INFO] PNG generado (18587 bytes)
+2026-05-26 16:43:05,077 [INFO] Diagrama DOT: 3554 caracteres
+2026-05-26 16:43:05,793 [INFO] PNG generado (145680 bytes)
+2026-05-26 16:46:46,678 [INFO] Filtrando del prompt las keys: ['contactos', 'diagramaBajoNivel', 'ejecucion']
+2026-05-26 16:46:46,680 [INFO] Keys removidas del JSON: 3/3
+2026-05-26 16:46:46,681 [INFO] Prompt final: ~3,404 tokens estimados
+2026-05-26 16:46:47,615 [INFO] DOCX procesado: PDD (17).docx | Texto: ~4,038 tokens | Tablas: 14 | Imágenes: 3
+2026-05-26 16:46:50,896 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-26 16:47:50,044 [INFO] Respuesta IA generada exitosamente (intento 1, 13398 chars)
+2026-05-26 16:47:50,302 [INFO] Diagrama DOT: 947 caracteres
+2026-05-26 16:47:50,876 [INFO] PNG generado (33202 bytes)
+2026-05-29 09:55:37,167 [INFO] Diagrama DOT: 783 caracteres
+2026-05-29 09:55:37,689 [ERROR] Error de sintaxis DOT: Command '[WindowsPath('dot'), '-Kdot', '-Tpng']' returned non-zero exit status 1. [stderr: b"Error: <stdin>: syntax error in line 2 near 'START'\r\n"]
+2026-05-29 09:55:37,690 [ERROR] Código recibido:
+graph TD
+START([START])-->main[ATW_Legajos y Formularios_Main_V1]
+main-->setup[ATW_Legajos y Formularios_Setup]
+setup-->config[ATW_Legajos y Formularios_Config]
+config-->sharepoint[ATW_Legajos y formularios_Sharepoint]
+sharepoint-->val[ATW_Legajos y formularios_SP_Validaciones]
+val-->report[ATW_Legajos y formularios_Report]
+report-->notif[ATW_Legajos y formularios_Notificaciones]
+notif-->END([END])
+style main fill:#ADD8E6,stroke:#333,stroke-width:2px
+style setup fill:#ADD8E6,stroke:#333,stroke-width:2px
+style config fill:#ADD8E6,stroke:#333,stroke-width:2px
+style notif fill:#ADD8E6,stroke:#333,stroke-width:2px
+style sharepoint fill:#FFFFE0,stroke:#333,stroke-width:2px
+style val fill:#FFFFE0,stroke:#333,stroke-width:2px
+style report fill:#FFFFE0,stroke:#333,stroke-width:2px
+2026-05-29 09:55:37,691 [INFO] Diagrama DOT: 1203 caracteres
+2026-05-29 09:55:37,718 [ERROR] Error de sintaxis DOT: Command '[WindowsPath('dot'), '-Kdot', '-Tpng']' returned non-zero exit status 1. [stderr: b"Error: <stdin>: syntax error in line 2 near 'START'\r\n"]
+2026-05-29 09:55:37,718 [ERROR] Código recibido:
+graph TD
+START([START])-->readExcel[Lectura Archivo Excel y Extracción de Datos]
+readExcel-->loopEmp[Loop por cada Empleado Input]
+loopEmp-->hasData{¿Empleado tiene Nombre o Fecha AFIP?}
+hasData-- NO -->nextEmp[Saltar Empleado]
+hasData-- SI -->findFolder{¿Posee carpeta en SharePoint?}
+findFolder-- NO -->writeNoFolder[Escribe 'No posee carpeta' en Output]
+writeNoFolder-->nextEmp
+findFolder-- SI -->readSPDocs[Lee y almacena Documentos Alta/Baja de SP]
+readSPDocs-->loopDocs[Loop recorrer docs requeridos]
+loopDocs-->existDoc{¿Documento existe en SP?}
+existDoc-- NO -->writeMissing[Registrar 'Archivo Faltante']
+existDoc-- SI -->checkVF{¿Posee sufijo -vf?}
+checkVF-- NO -->writeErr[Registrar 'Erróneo']
+checkVF-- SI -->checkExt{¿Extensión y Fecha coinciden?}
+checkExt-- NO -->writeErr
+checkExt-- SI -->writeOK[Registrar 'Correcto']
+writeMissing-->nextDoc[Siguiente Documento]
+writeErr-->nextDoc
+writeOK-->nextDoc
+nextDoc-->moreDocs{¿Quedan documentos?}
+moreDocs-- SI -->loopDocs
+moreDocs-- NO -->nex
+2026-05-29 10:18:23,855 [INFO] Filtrando del prompt las keys: ['apis', 'codigoPython', 'configuracionVM', 'diagrama_detalle', 'diagrama_pasos', 'macrosExcel', 'ocr']
+2026-05-29 10:18:23,858 [INFO] Keys removidas del JSON: 2/7
+2026-05-29 10:18:23,861 [INFO] Prompt final: ~3,870 tokens estimados
+2026-05-29 10:18:26,112 [INFO] DOCX procesado: D-RPA-VW- HR010 Control Horas Seguridad PDD(ES)-v1.0-ATAWAY-AR388.docx | Texto: ~7,518 tokens | Tablas: 17 | Imágenes: 41
+2026-05-29 10:18:32,153 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-29 10:22:48,866 [INFO] Respuesta IA generada exitosamente (intento 1, 50825 chars)
+2026-05-29 10:31:15,553 [INFO] Filtrando del prompt las keys: ['diagrama_detalle', 'diagrama_pasos']
+2026-05-29 10:31:15,555 [INFO] Keys removidas del JSON: 2/2
+2026-05-29 10:31:15,557 [INFO] Prompt final: ~4,285 tokens estimados
+2026-05-29 10:31:17,745 [INFO] DOCX procesado: D-RPA-VW- HR010 Control Horas Seguridad PDD(ES)-v1.0-ATAWAY-AR388.docx | Texto: ~7,518 tokens | Tablas: 17 | Imágenes: 41
+2026-05-29 10:31:24,760 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-29 10:34:43,176 [INFO] Respuesta IA generada exitosamente (intento 1, 38458 chars)
+2026-05-29 11:07:51,846 [INFO] Filtrando del prompt las keys: ['diagrama_detalle', 'diagrama_pasos']
+2026-05-29 11:07:51,848 [INFO] Keys removidas del JSON: 2/2
+2026-05-29 11:07:51,850 [INFO] Prompt final: ~4,697 tokens estimados
+2026-05-29 11:07:54,190 [INFO] DOCX procesado: D-RPA-VW- HR010 Control Horas Seguridad PDD(ES)-v1.0-ATAWAY-AR388.docx | Texto: ~7,518 tokens | Tablas: 17 | Imágenes: 41
+2026-05-29 11:08:05,150 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-29 11:11:36,443 [INFO] Respuesta IA generada exitosamente (intento 1, 40579 chars)
+2026-06-02 13:06:16,582 [INFO] Diagrama DOT: 333 caracteres
+2026-06-02 13:06:17,410 [ERROR] Error de sintaxis DOT: Command '[WindowsPath('dot'), '-Kdot', '-Tpng']' returned non-zero exit status 1. [stderr: b"Error: <stdin>: syntax error in line 2 near 'START'\r\n"]
+2026-06-02 13:06:17,410 [ERROR] Código recibido:
+graph TD
+START([START]) --> Recepcion[Recepción de Porciones y Parámetros]
+Recepcion --> Descarga[Descarga de Reportes y Fotos]
+Descarga --> Procesamiento[Procesamiento de Fotos con IA]
+Procesamiento --> Validacion[Validación de Resultados y Base de Datos]
+Validacion --> Reporte[Generación de Pestaña Resumen]
+Reporte --> END([END])
+2026-06-02 13:06:17,411 [INFO] Diagrama DOT: 1307 caracteres
+2026-06-02 13:06:17,460 [ERROR] Error de sintaxis DOT: Command '[WindowsPath('dot'), '-Kdot', '-Tpng']' returned non-zero exit status 1. [stderr: b"Error: <stdin>: syntax error in line 2 near 'START'\r\n"]
+2026-06-02 13:06:17,460 [ERROR] Código recibido:
+graph TD
+START([START]) --> decFlag{¿Existe archivo flag?}
+decFlag -- Sí --> Recuperar[Identificar punto de caída]
+decFlag -- No --> Inicio[Tomar porción del día / calendario]
+Recuperar --> CargaParam[Cargar archivo de parámetros]
+Inicio --> CargaParam
+CargaParam --> SolicitudWeb[Solicitar reporte Visitas y Pendientes en Webget]
+SolicitudWeb --> decEstado{¿Completado?}
+decEstado -- No --> Espera[Esperar 5 min - máx 12 veces]
+Espera --> SolicitudWeb
+decEstado -- Sí --> DescargaArch[Descargar archivo y limpiar carpetas temporales]
+DescargaArch --> LecturaL31[Consultar última lectura real en L31]
+LecturaL31 --> DescargaFotos[Descargar fotos desde URL generada]
+DescargaFotos --> IterarFotos[Iterar por cada instalación]
+IterarFotos --> decHist{¿Ya procesado en últimos 6 meses?}
+decHist -- Sí --> MarcarReiterado[Registrar como reiterado]
+decHist -- No --> EnviarIA[Enviar fotos y prompt a IA según anomalía 31 o 32]
+MarcarReiterado --> SigInst[Siguiente instalación]
+EnviarIA --> RegistroRes[Re
+2026-06-04 11:32:05,830 [INFO] Diagrama DOT: 333 caracteres
+2026-06-04 11:32:06,556 [ERROR] Error de sintaxis DOT: Command '[WindowsPath('dot'), '-Kdot', '-Tpng']' returned non-zero exit status 1. [stderr: b"Error: <stdin>: syntax error in line 2 near 'START'\r\n"]
+2026-06-04 11:32:06,556 [ERROR] Código recibido:
+graph TD
+START([START]) --> Recepcion[Recepción de Porciones y Parámetros]
+Recepcion --> Descarga[Descarga de Reportes y Fotos]
+Descarga --> Procesamiento[Procesamiento de Fotos con IA]
+Procesamiento --> Validacion[Validación de Resultados y Base de Datos]
+Validacion --> Reporte[Generación de Pestaña Resumen]
+Reporte --> END([END])
+2026-06-04 11:32:06,557 [INFO] Diagrama DOT: 1307 caracteres
+2026-06-04 11:32:06,603 [ERROR] Error de sintaxis DOT: Command '[WindowsPath('dot'), '-Kdot', '-Tpng']' returned non-zero exit status 1. [stderr: b"Error: <stdin>: syntax error in line 2 near 'START'\r\n"]
+2026-06-04 11:32:06,603 [ERROR] Código recibido:
+graph TD
+START([START]) --> decFlag{¿Existe archivo flag?}
+decFlag -- Sí --> Recuperar[Identificar punto de caída]
+decFlag -- No --> Inicio[Tomar porción del día / calendario]
+Recuperar --> CargaParam[Cargar archivo de parámetros]
+Inicio --> CargaParam
+CargaParam --> SolicitudWeb[Solicitar reporte Visitas y Pendientes en Webget]
+SolicitudWeb --> decEstado{¿Completado?}
+decEstado -- No --> Espera[Esperar 5 min - máx 12 veces]
+Espera --> SolicitudWeb
+decEstado -- Sí --> DescargaArch[Descargar archivo y limpiar carpetas temporales]
+DescargaArch --> LecturaL31[Consultar última lectura real en L31]
+LecturaL31 --> DescargaFotos[Descargar fotos desde URL generada]
+DescargaFotos --> IterarFotos[Iterar por cada instalación]
+IterarFotos --> decHist{¿Ya procesado en últimos 6 meses?}
+decHist -- Sí --> MarcarReiterado[Registrar como reiterado]
+decHist -- No --> EnviarIA[Enviar fotos y prompt a IA según anomalía 31 o 32]
+MarcarReiterado --> SigInst[Siguiente instalación]
+EnviarIA --> RegistroRes[Re
+2026-06-09 09:30:36,824 [INFO] DOCX procesado: D-OP-RPA-INT - PDD Extraccion de datos de facturas(ES) 1.docx | Texto: ~14,830 tokens | Tablas: 23 | Imágenes: 142
+2026-06-09 09:30:36,839 [INFO] Archivo procesado: EXCEPCIONES.xlsx | Tipo: text | Tokens estimados: ~394
+2026-06-09 09:30:49,242 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-06-09 09:31:44,819 [INFO] Respuesta IA generada exitosamente (intento 1, 17005 chars)
+2026-06-09 09:41:07,512 [INFO] DOCX procesado: D-OP-RPA-INT - PDD Extraccion de datos de facturas(ES) 1.docx | Texto: ~14,830 tokens | Tablas: 23 | Imágenes: 142
+2026-06-09 09:41:07,532 [INFO] Archivo procesado: EXCEPCIONES.xlsx | Tipo: text | Tokens estimados: ~394
+2026-06-09 09:41:18,214 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-06-09 09:42:20,088 [INFO] Respuesta IA generada exitosamente (intento 1, 17676 chars)
+2026-06-09 15:25:06,613 [INFO] No hay campos deseleccionados, se manda el prompt completo
+2026-06-09 15:25:06,614 [INFO] Prompt final: ~5,401 tokens estimados
+2026-06-09 15:25:10,314 [INFO] DOCX procesado: D-OP-RPA-INT - PDD Extraccion de datos de facturas(ES) 1.docx | Texto: ~14,830 tokens | Tablas: 23 | Imágenes: 142
+2026-06-09 15:25:10,314 [INFO] Saltando archivo no soportado dentro del zip: bot-command-messagebox-3.8.1.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-table-4.8.0.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-list-2.16.2.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-task-2.10.0-20241119-100739.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-comment-2.14.0.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-msexcel-6.23.16.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-json-1.11.0.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-string-5.12.2.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-system-3.12.0.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-poi-6.15.0.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-task-2.7.2-20230316-160508.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-delay-3.10.0.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-messagebox-3.6.0.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-number-3.11.3.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-python-2.20.0.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-if-3.7.14-20231116-000453.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-email-3.31.1.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-string-5.11.3.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-file-6.11.0.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-logtofile-3.7.0.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-loop-3.7.5-20230316-155504.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-file-6.14.2.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-step-2.7.0.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-dictionary-3.12.0.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-number-3.8.0.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-application-3.11.2.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-if-3.8.0-20241115-115929.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-boolean-2.13.2.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-pdf-3.11.0.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-datetime-2.17.3.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-textfile-1.8.0.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-loop-3.10.0-20251030-061555.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-system-3.18.0.jar
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: bot-command-error-handler-2.13.0-20241115-120032.jar
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: bot-command-folder-6.12.1.jar
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: bot-command-logtofile-3.11.1.jar
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: bot-command-msexcel-6.23.14.jar
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: bot-command-boolean-2.13.3.jar
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: bot-command-string-5.7.1.jar
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: bot-command-error-handler-2.11.3-20230316-162433.jar
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: bot-command-delay-3.8.0.jar
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: bot-command-table-4.18.0.jar
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: bot-command-step-2.5.0-20230105-135537.jar
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/ATW_BG002/ATW_BG002_Validaciones
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/ATW_BG002/ATW_BG002_Setup
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/Public Tasks/ATW_IDBOT_Public_Logs
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/ATW_BG002/AYW_BG002_Carga_Datos
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/ATW_BG002/ATW_BG002_Report
+2026-06-09 15:25:10,318 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/Public Tasks/ATW_IDBOT_Public_Notificaciones
+2026-06-09 15:25:10,318 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/Public Tasks/ATW_IDBOT_Public_Config
+2026-06-09 15:25:10,318 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/ATW_BG002/ATW_BG002_Identificacion_Proveedor
+2026-06-09 15:25:10,318 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/ATW_BG002/ATW_BG002_Main
+2026-06-09 15:25:10,318 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/ATW_BG002/ATW_BG002_Extraccion_Datos_Facturas
+2026-06-09 15:25:10,318 [INFO] Archivo procesado: manifest.json | Tipo: text | Tokens estimados: ~2,250
+2026-06-09 15:25:10,318 [INFO] ZIP procesado: ATW_BG002.lcorbo.zip | Bloques extraídos: 1
+2026-06-09 15:25:21,210 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-06-09 15:28:27,465 [INFO] Respuesta IA generada exitosamente (intento 1, 36163 chars)
+2026-06-09 15:28:28,191 [INFO] Diagrama DOT: 980 caracteres
+2026-06-09 15:28:30,833 [INFO] PNG generado (17520 bytes)
+2026-06-09 15:28:30,834 [INFO] Diagrama DOT: 3662 caracteres
+2026-06-09 15:28:32,127 [INFO] PNG generado (169435 bytes)
+2026-06-18 15:18:03,106 [INFO] DOCX procesado: D-OP-RPA-INTERNO-Legajos y formularios-PDD V.11.docx | Texto: ~5,286 tokens | Tablas: 11 | Imágenes: 16
+2026-06-18 15:18:08,206 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:18:08,207 [INFO] Retrying request to /chat/completions in 0.396665 seconds
+2026-06-18 15:18:10,145 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:18:10,146 [INFO] Retrying request to /chat/completions in 0.801461 seconds
+2026-06-18 15:18:12,395 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:18:12,399 [WARNING] Error transitorio en intento 1/3: InternalServerError: Internal Server Error
+2026-06-18 15:18:12,399 [INFO] Reintentando en 1s...
+2026-06-18 15:18:14,703 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:18:14,704 [INFO] Retrying request to /chat/completions in 0.416216 seconds
+2026-06-18 15:18:16,467 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:18:16,468 [INFO] Retrying request to /chat/completions in 0.764512 seconds
+2026-06-18 15:18:18,718 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:18:18,720 [WARNING] Error transitorio en intento 2/3: InternalServerError: Internal Server Error
+2026-06-18 15:18:18,720 [INFO] Reintentando en 2s...
+2026-06-18 15:18:21,933 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:18:21,933 [INFO] Retrying request to /chat/completions in 0.486394 seconds
+2026-06-18 15:18:23,769 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:18:23,770 [INFO] Retrying request to /chat/completions in 0.848300 seconds
+2026-06-18 15:18:25,841 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:18:25,843 [WARNING] Error transitorio en intento 3/3: InternalServerError: Internal Server Error
+2026-06-18 15:18:25,843 [ERROR] Todos los reintentos fallaron. Último error: Internal Server Error
+2026-06-18 15:21:45,730 [INFO] DOCX procesado: D-OP-RPA-INTERNO-Legajos y formularios-PDD V.11.docx | Texto: ~5,286 tokens | Tablas: 11 | Imágenes: 16
+2026-06-18 15:21:49,385 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:21:49,386 [INFO] Retrying request to /chat/completions in 0.443634 seconds
+2026-06-18 15:21:51,094 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:21:51,095 [INFO] Retrying request to /chat/completions in 0.833830 seconds
+2026-06-18 15:21:53,274 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:21:53,276 [WARNING] Error transitorio en intento 1/3: InternalServerError: Internal Server Error
+2026-06-18 15:21:53,277 [INFO] Reintentando en 1s...
+2026-06-18 15:21:55,601 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:21:55,601 [INFO] Retrying request to /chat/completions in 0.422791 seconds
+2026-06-18 15:21:57,292 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:21:57,293 [INFO] Retrying request to /chat/completions in 0.924763 seconds
+2026-06-18 15:21:59,522 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:21:59,523 [WARNING] Error transitorio en intento 2/3: InternalServerError: Internal Server Error
+2026-06-18 15:21:59,524 [INFO] Reintentando en 2s...
+2026-06-18 15:22:02,803 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:22:02,804 [INFO] Retrying request to /chat/completions in 0.404662 seconds
+2026-06-18 15:22:04,752 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:22:04,753 [INFO] Retrying request to /chat/completions in 0.938306 seconds
+2026-06-18 15:22:07,036 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:22:07,037 [WARNING] Error transitorio en intento 3/3: InternalServerError: Internal Server Error
+2026-06-18 15:22:07,037 [ERROR] Todos los reintentos fallaron. Último error: Internal Server Error
+2026-06-18 15:29:22,213 [INFO] DOCX procesado: D-OP-RPA-INTERNO-Legajos y formularios-PDD V.11.docx | Texto: ~5,286 tokens | Tablas: 11 | Imágenes: 16
+2026-06-18 15:29:23,806 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:29:23,806 [INFO] Retrying request to /chat/completions in 0.435164 seconds
+2026-06-18 15:29:25,561 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:29:25,561 [INFO] Retrying request to /chat/completions in 0.921606 seconds
+2026-06-18 15:29:27,839 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:29:27,841 [WARNING] Error transitorio en intento 1/3: InternalServerError: Internal Server Error
+2026-06-18 15:29:27,841 [INFO] Reintentando en 1s...
+2026-06-18 15:29:30,145 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:29:30,146 [INFO] Retrying request to /chat/completions in 0.474615 seconds
+2026-06-18 15:29:31,874 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:29:31,875 [INFO] Retrying request to /chat/completions in 0.907595 seconds
+2026-06-18 15:29:34,029 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:29:34,036 [WARNING] Error transitorio en intento 2/3: InternalServerError: Internal Server Error
+2026-06-18 15:29:34,036 [INFO] Reintentando en 2s...
+2026-06-18 15:29:37,356 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:29:37,356 [INFO] Retrying request to /chat/completions in 0.417462 seconds
+2026-06-18 15:29:39,042 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:29:39,043 [INFO] Retrying request to /chat/completions in 0.851525 seconds
+2026-06-18 15:29:41,102 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:29:41,104 [WARNING] Error transitorio en intento 3/3: InternalServerError: Internal Server Error
+2026-06-18 15:29:41,105 [ERROR] Todos los reintentos fallaron. Último error: Internal Server Error
+2026-06-18 16:29:54,927 [ERROR] API_KEY no encontrada en las variables de entorno.
+2026-06-18 16:30:50,729 [INFO] DOCX procesado: D-OP-RPA-INTERNO-Legajos y formularios-PDD V.11.docx | Texto: ~5,286 tokens | Tablas: 11 | Imágenes: 16
+2026-06-18 16:30:54,212 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-06-18 16:31:39,861 [INFO] Respuesta IA generada exitosamente (intento 1, 13058 chars)
+2026-06-23 10:38:29,025 [INFO] No hay campos deseleccionados, se manda el prompt completo
+2026-06-23 10:38:29,027 [INFO] Prompt final: ~3,892 tokens estimados
+2026-06-23 10:38:30,034 [INFO] DOCX procesado: Transcripcion_Mapas_de_Calor.docx | Texto: ~5,466 tokens | Tablas: 0 | Imágenes: 0
+2026-06-23 10:38:30,055 [INFO] Ejemplos de referencia cargados: 2
+2026-06-23 10:38:31,933 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-06-23 10:39:48,869 [INFO] Respuesta IA generada exitosamente (intento 1, 17286 chars)
+2026-06-23 10:39:49,257 [INFO] Diagrama DOT: 637 caracteres
+2026-06-23 10:39:52,957 [INFO] PNG generado (13632 bytes)
+2026-06-23 10:39:52,959 [INFO] Diagrama DOT: 2558 caracteres
+2026-06-23 10:39:54,240 [INFO] PNG generado (84471 bytes)
+2026-06-24 12:20:59,413 [INFO] DOCX procesado: D-OP-RPA-DDS-Mapa de Calor-PDD(ES)-v3 1.docx | Texto: ~4,644 tokens | Tablas: 14 | Imágenes: 22
+2026-06-24 12:20:59,414 [WARNING] Carpeta de ejemplos no encontrada: C:\Users\mvidaurre\Desktop\RPA\uatAcelerator\utils\ejemplos_pdd
+2026-06-24 12:21:02,727 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-06-24 12:22:03,253 [INFO] Respuesta IA generada exitosamente (intento 1, 15524 chars)
+2026-06-26 09:10:44,304 [INFO] DOCX procesado: PDD_Correos.docx | Texto: ~4,045 tokens | Tablas: 11 | Imágenes: 28
+2026-06-26 09:10:44,305 [WARNING] Carpeta de ejemplos no encontrada: C:\Users\mvidaurre\Desktop\RPA\uatAcelerator\utils\ejemplos_pdd
+2026-06-26 09:10:47,764 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-06-26 09:11:40,130 [INFO] Respuesta IA generada exitosamente (intento 1, 12744 chars)
+2026-06-26 09:49:17,192 [INFO] DOCX procesado: PDD_Correos.docx | Texto: ~4,045 tokens | Tablas: 11 | Imágenes: 28
+2026-06-26 09:49:17,194 [WARNING] Carpeta de ejemplos no encontrada: C:\Users\mvidaurre\Desktop\RPA\uatAcelerator\utils\ejemplos_pdd
+2026-06-26 09:49:23,661 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-06-26 09:50:18,179 [INFO] Respuesta IA generada exitosamente (intento 1, 12007 chars)

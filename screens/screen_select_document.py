@@ -18,12 +18,12 @@ def screen_select_document():
     st.session_state.setdefault("mode", None)
 
     # BARRA DE NAVEGACION
-    top_bar(title="Seleccione el tipo de documento", back_to="init", show_stepper=True, step=0)
+    top_bar(title="", back_to="init", show_stepper=True, step=0)
 
 
     # DOCUMENTOS HABILITADOS
     enabled_docs = st.session_state.get("enabled_docs", [])
-    all_types = {"PDD": "📄 PDD", "SDD": "📄 SDD", "TDD": "📄 TDD"}
+    all_types = {"PDD": "📄 PDD", "SDD": "📄 SDD", "TDD": "📄 Test Script"}
     types = {all_types[d]: d for d in enabled_docs if d in all_types}
 
     if not types:
@@ -31,26 +31,19 @@ def screen_select_document():
         st.error("No hay tipos de documento habilitados. Revisá la configuración.")
         st.stop()
 
-    # BOTON TIPO DOCUMENTO
-    with st.columns([1,3,1])[1]:
-        doc_type = st.radio(
-            "Tipo de documento",
-            list(types.keys()),
-            horizontal=True,
-            label_visibility="collapsed",
-        )
+    with st.columns([1,7,1])[1]:
+        # TITULO
+        section_title("Seleccioná el tipo de documento", left=False)
+        # BOTON TIPO DOCUMENTO
+        doc_type = st.radio("Tipo de documento", list(types.keys()), horizontal=True, label_visibility="collapsed")
     st.session_state.doc_type = types[doc_type]
 
-    # BOTON TIPO ACCION
-    section_title("¿Qué acción desea realizar?")
     modes = {"Nuevo documento": "new", "Actualizar documento": "update"}
-    with st.columns([1,3,1])[1]:
-        mode = st.radio(
-            "Tipo de acción",
-            list(modes.keys()),
-            horizontal=True,
-            label_visibility="collapsed",
-        )
+    with st.columns([1,7,1])[1]:
+        # TITULO
+        section_title("¿Qué acción desea realizar?")
+        # BOTON TIPO ACCION
+        mode = st.radio("Tipo de acción", list(modes.keys()), horizontal=True, label_visibility="collapsed")
     st.session_state.mode = modes[mode]
 
     # BOTÓN AVANZAR

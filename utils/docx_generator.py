@@ -1,34 +1,35 @@
-from docxtpl import DocxTemplate, InlineImage
+from docxtpl import DocxTemplate, InlineImage, RichText
 from docx import Document
 from docx.oxml import OxmlElement
 from docx.shared import *
 from docx.oxml.ns import qn
+from docs import get_doc
 from utils.word_formatter import format_richtext
 import os
 import streamlit as st
 from io import BytesIO
-from utils.test_script_generator import generate
+from utils.test_script_generator import generate_TDD
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # -- Función principal para generar el documento -------------------------------------------------------
-def generate_docx(jsonText: dict, document=None, mode=None):    
+def generate_docx(jsonText: dict, mode=None):    
     
-    # -- Cargo el template -----------------------------------------------------------------------------
-    if document is not None:
-        tpl = DocxTemplate(os.path.join(BASE_DIR, "templates", document + ".docx"))
+    document = get_doc(st.session_state.doc_type)
+    if document:
+        tpl = DocxTemplate(os.path.join(BASE_DIR, "templates", document.get_filename()))
     else:
         st.error("Error 500: Ocurrió un error con el template del documento")
         return
 
     # -- Reviso si es PDD o SDD y genero el archivo ----------------------------------------------------
     jsonText = sanitize_all(jsonText)
-    if document == "SDD":
+    if document.get_filename() == "SDD.docx":
         buffer = generate_SDD(tpl, jsonText)
-    elif document == "PDD":
+    elif document.get_filename() == "PDD.docx":
         buffer = generate_PDD(tpl, jsonText)
-    elif document == "TDD":
-        buffer = generate(jsonText)
+    elif document.get_filename() == "TestScript.xlsx":
+        buffer = generate_TDD(jsonText)
     else:
         st.error("Error 500: Tipo de documento no soportado")
         return   
@@ -37,7 +38,6 @@ def generate_docx(jsonText: dict, document=None, mode=None):
 # -- Funcion para generar SDD --------------------------------------------------------------------------
 def generate_SDD(tpl, context):
     
-    # Formateo todos los campos que tengan richText
     for tarea in context.get("solucionTecnicaDetallada", []):
         texto_original = tarea.get("descripcionExacta", "")
         # Reemplazamos el string por el objeto RichText
@@ -62,14 +62,14 @@ def generate_SDD(tpl, context):
 
 def generate_PDD(tpl, context: dict):
     
-    # PROPOSITO PROCESO ----------------------------------------------------
+    # PROPOSITO
     context["propositoProceso"] = format_richtext(context["propositoProceso"])
 
-    # IMAGENES DE LOS DIAGRAMAS --------------------------------------------
-    load_img(field="diagramaAltoNivel", height=6, tpl=tpl, context=context)
+    # DIAGRAMAS
+    load_img(field="diagramaAltoNivel", height=5.8, tpl=tpl, context=context)
     load_img(field="diagramaBajoNivel", height=8, tpl=tpl, context=context)
 
-    # PASOS DE LAS FASES ------------------------------------------------------
+    # PASOS DE LAS FASES
     fases = context.get("fases", [])
     phaseCounter = 1
     for fase in fases:
@@ -80,7 +80,7 @@ def generate_PDD(tpl, context: dict):
             stepCounter += 1
         phaseCounter += 1
 
-    # EXCEPCIONES -------------------------------------------------------------
+    # EXCEPCIONES
     excepciones = context.get("excepciones", [])
     excepcionesSys = []
     excepcionesNeg = []
@@ -97,14 +97,8 @@ def generate_PDD(tpl, context: dict):
             counter_exceptions += 1
     context["excepcionesSys"] = excepcionesSys
     context["excepcionesNeg"] = excepcionesNeg
-    
-    variables_template = tpl.get_undeclared_template_variables()
 
-    variables_template = tpl.get_undeclared_template_variables()
-    for var in variables_template:
-        val = context.get(var)
-        if val is None or val == "":
-            context[var] = f"{{{{{var}}}}}"
+    fill_undeclared_variables(tpl, context)
 
     tpl.render(context)
     
@@ -115,7 +109,7 @@ def generate_PDD(tpl, context: dict):
     doc = Document(buffer)
     
     WIDTHS_PRECONDICIONES  = [Inches(0.6), Inches(1.4), Inches(4.7)]
-    WIDTHS_FASES        = [Inches(0.6), Inches(1.5), Inches(3.2), Inches(1.4)]
+    WIDTHS_FASES        = [Inches(0.6), Inches(1.5), Inches(3.7), Inches(0.9)]
     WIDTHS_EXCEPCIONES  = [Inches(0.6), Inches(2.4), Inches(3.7)]
     
     for tabla in doc.tables:
@@ -240,3 +234,13 @@ def set_col_widths(table, widths):
                 wordWrap = pPr.find(qn('w:wordWrap'))
                 if wordWrap is not None:
                     pPr.remove(wordWrap)
+      
+# REEMPLAZA LOS VALORES NO COMPLETADOS EN EL TEMPLATE              
+def fill_undeclared_variables(tpl, context):
+    variables_template = tpl.get_undeclared_template_variables()
+    for var in variables_template:
+        val = context.get(var)
+        if isinstance(val, (list, dict)):
+            continue
+        if val is None or val == "":
+            context[var] = f"[{var.upper()}]"

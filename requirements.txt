@@ -7,3 +7,5 @@ json5
 openpyxl
 mammoth
 graphviz>=0.20
+streamlit-keyup
+openai

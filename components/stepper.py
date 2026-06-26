@@ -8,7 +8,7 @@ def render_stepper(step):
 
     total = len(steps)
     width = 1000
-    height = 70
+    height = 90
     paso_w = width // total
     radio = 20
 

@@ -736,3 +736,231 @@ moreDocs-- NO -->nex
 2026-05-29 11:07:54,190 [INFO] DOCX procesado: D-RPA-VW- HR010 Control Horas Seguridad PDD(ES)-v1.0-ATAWAY-AR388.docx | Texto: ~7,518 tokens | Tablas: 17 | Imágenes: 41
 2026-05-29 11:08:05,150 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
 2026-05-29 11:11:36,443 [INFO] Respuesta IA generada exitosamente (intento 1, 40579 chars)
+2026-06-02 13:06:16,582 [INFO] Diagrama DOT: 333 caracteres
+2026-06-02 13:06:17,410 [ERROR] Error de sintaxis DOT: Command '[WindowsPath('dot'), '-Kdot', '-Tpng']' returned non-zero exit status 1. [stderr: b"Error: <stdin>: syntax error in line 2 near 'START'\r\n"]
+2026-06-02 13:06:17,410 [ERROR] Código recibido:
+graph TD
+START([START]) --> Recepcion[Recepción de Porciones y Parámetros]
+Recepcion --> Descarga[Descarga de Reportes y Fotos]
+Descarga --> Procesamiento[Procesamiento de Fotos con IA]
+Procesamiento --> Validacion[Validación de Resultados y Base de Datos]
+Validacion --> Reporte[Generación de Pestaña Resumen]
+Reporte --> END([END])
+2026-06-02 13:06:17,411 [INFO] Diagrama DOT: 1307 caracteres
+2026-06-02 13:06:17,460 [ERROR] Error de sintaxis DOT: Command '[WindowsPath('dot'), '-Kdot', '-Tpng']' returned non-zero exit status 1. [stderr: b"Error: <stdin>: syntax error in line 2 near 'START'\r\n"]
+2026-06-02 13:06:17,460 [ERROR] Código recibido:
+graph TD
+START([START]) --> decFlag{¿Existe archivo flag?}
+decFlag -- Sí --> Recuperar[Identificar punto de caída]
+decFlag -- No --> Inicio[Tomar porción del día / calendario]
+Recuperar --> CargaParam[Cargar archivo de parámetros]
+Inicio --> CargaParam
+CargaParam --> SolicitudWeb[Solicitar reporte Visitas y Pendientes en Webget]
+SolicitudWeb --> decEstado{¿Completado?}
+decEstado -- No --> Espera[Esperar 5 min - máx 12 veces]
+Espera --> SolicitudWeb
+decEstado -- Sí --> DescargaArch[Descargar archivo y limpiar carpetas temporales]
+DescargaArch --> LecturaL31[Consultar última lectura real en L31]
+LecturaL31 --> DescargaFotos[Descargar fotos desde URL generada]
+DescargaFotos --> IterarFotos[Iterar por cada instalación]
+IterarFotos --> decHist{¿Ya procesado en últimos 6 meses?}
+decHist -- Sí --> MarcarReiterado[Registrar como reiterado]
+decHist -- No --> EnviarIA[Enviar fotos y prompt a IA según anomalía 31 o 32]
+MarcarReiterado --> SigInst[Siguiente instalación]
+EnviarIA --> RegistroRes[Re
+2026-06-04 11:32:05,830 [INFO] Diagrama DOT: 333 caracteres
+2026-06-04 11:32:06,556 [ERROR] Error de sintaxis DOT: Command '[WindowsPath('dot'), '-Kdot', '-Tpng']' returned non-zero exit status 1. [stderr: b"Error: <stdin>: syntax error in line 2 near 'START'\r\n"]
+2026-06-04 11:32:06,556 [ERROR] Código recibido:
+graph TD
+START([START]) --> Recepcion[Recepción de Porciones y Parámetros]
+Recepcion --> Descarga[Descarga de Reportes y Fotos]
+Descarga --> Procesamiento[Procesamiento de Fotos con IA]
+Procesamiento --> Validacion[Validación de Resultados y Base de Datos]
+Validacion --> Reporte[Generación de Pestaña Resumen]
+Reporte --> END([END])
+2026-06-04 11:32:06,557 [INFO] Diagrama DOT: 1307 caracteres
+2026-06-04 11:32:06,603 [ERROR] Error de sintaxis DOT: Command '[WindowsPath('dot'), '-Kdot', '-Tpng']' returned non-zero exit status 1. [stderr: b"Error: <stdin>: syntax error in line 2 near 'START'\r\n"]
+2026-06-04 11:32:06,603 [ERROR] Código recibido:
+graph TD
+START([START]) --> decFlag{¿Existe archivo flag?}
+decFlag -- Sí --> Recuperar[Identificar punto de caída]
+decFlag -- No --> Inicio[Tomar porción del día / calendario]
+Recuperar --> CargaParam[Cargar archivo de parámetros]
+Inicio --> CargaParam
+CargaParam --> SolicitudWeb[Solicitar reporte Visitas y Pendientes en Webget]
+SolicitudWeb --> decEstado{¿Completado?}
+decEstado -- No --> Espera[Esperar 5 min - máx 12 veces]
+Espera --> SolicitudWeb
+decEstado -- Sí --> DescargaArch[Descargar archivo y limpiar carpetas temporales]
+DescargaArch --> LecturaL31[Consultar última lectura real en L31]
+LecturaL31 --> DescargaFotos[Descargar fotos desde URL generada]
+DescargaFotos --> IterarFotos[Iterar por cada instalación]
+IterarFotos --> decHist{¿Ya procesado en últimos 6 meses?}
+decHist -- Sí --> MarcarReiterado[Registrar como reiterado]
+decHist -- No --> EnviarIA[Enviar fotos y prompt a IA según anomalía 31 o 32]
+MarcarReiterado --> SigInst[Siguiente instalación]
+EnviarIA --> RegistroRes[Re
+2026-06-09 09:30:36,824 [INFO] DOCX procesado: D-OP-RPA-INT - PDD Extraccion de datos de facturas(ES) 1.docx | Texto: ~14,830 tokens | Tablas: 23 | Imágenes: 142
+2026-06-09 09:30:36,839 [INFO] Archivo procesado: EXCEPCIONES.xlsx | Tipo: text | Tokens estimados: ~394
+2026-06-09 09:30:49,242 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-06-09 09:31:44,819 [INFO] Respuesta IA generada exitosamente (intento 1, 17005 chars)
+2026-06-09 09:41:07,512 [INFO] DOCX procesado: D-OP-RPA-INT - PDD Extraccion de datos de facturas(ES) 1.docx | Texto: ~14,830 tokens | Tablas: 23 | Imágenes: 142
+2026-06-09 09:41:07,532 [INFO] Archivo procesado: EXCEPCIONES.xlsx | Tipo: text | Tokens estimados: ~394
+2026-06-09 09:41:18,214 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-06-09 09:42:20,088 [INFO] Respuesta IA generada exitosamente (intento 1, 17676 chars)
+2026-06-09 15:25:06,613 [INFO] No hay campos deseleccionados, se manda el prompt completo
+2026-06-09 15:25:06,614 [INFO] Prompt final: ~5,401 tokens estimados
+2026-06-09 15:25:10,314 [INFO] DOCX procesado: D-OP-RPA-INT - PDD Extraccion de datos de facturas(ES) 1.docx | Texto: ~14,830 tokens | Tablas: 23 | Imágenes: 142
+2026-06-09 15:25:10,314 [INFO] Saltando archivo no soportado dentro del zip: bot-command-messagebox-3.8.1.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-table-4.8.0.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-list-2.16.2.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-task-2.10.0-20241119-100739.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-comment-2.14.0.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-msexcel-6.23.16.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-json-1.11.0.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-string-5.12.2.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-system-3.12.0.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-poi-6.15.0.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-task-2.7.2-20230316-160508.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-delay-3.10.0.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-messagebox-3.6.0.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-number-3.11.3.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-python-2.20.0.jar
+2026-06-09 15:25:10,315 [INFO] Saltando archivo no soportado dentro del zip: bot-command-if-3.7.14-20231116-000453.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-email-3.31.1.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-string-5.11.3.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-file-6.11.0.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-logtofile-3.7.0.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-loop-3.7.5-20230316-155504.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-file-6.14.2.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-step-2.7.0.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-dictionary-3.12.0.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-number-3.8.0.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-application-3.11.2.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-if-3.8.0-20241115-115929.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-boolean-2.13.2.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-pdf-3.11.0.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-datetime-2.17.3.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-textfile-1.8.0.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-loop-3.10.0-20251030-061555.jar
+2026-06-09 15:25:10,316 [INFO] Saltando archivo no soportado dentro del zip: bot-command-system-3.18.0.jar
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: bot-command-error-handler-2.13.0-20241115-120032.jar
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: bot-command-folder-6.12.1.jar
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: bot-command-logtofile-3.11.1.jar
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: bot-command-msexcel-6.23.14.jar
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: bot-command-boolean-2.13.3.jar
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: bot-command-string-5.7.1.jar
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: bot-command-error-handler-2.11.3-20230316-162433.jar
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: bot-command-delay-3.8.0.jar
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: bot-command-table-4.18.0.jar
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: bot-command-step-2.5.0-20230105-135537.jar
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/ATW_BG002/ATW_BG002_Validaciones
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/ATW_BG002/ATW_BG002_Setup
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/Public Tasks/ATW_IDBOT_Public_Logs
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/ATW_BG002/AYW_BG002_Carga_Datos
+2026-06-09 15:25:10,317 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/ATW_BG002/ATW_BG002_Report
+2026-06-09 15:25:10,318 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/Public Tasks/ATW_IDBOT_Public_Notificaciones
+2026-06-09 15:25:10,318 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/Public Tasks/ATW_IDBOT_Public_Config
+2026-06-09 15:25:10,318 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/ATW_BG002/ATW_BG002_Identificacion_Proveedor
+2026-06-09 15:25:10,318 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/ATW_BG002/ATW_BG002_Main
+2026-06-09 15:25:10,318 [INFO] Saltando archivo no soportado dentro del zip: Automation Anywhere/Bots/ATW_BG002/ATW_BG002_Extraccion_Datos_Facturas
+2026-06-09 15:25:10,318 [INFO] Archivo procesado: manifest.json | Tipo: text | Tokens estimados: ~2,250
+2026-06-09 15:25:10,318 [INFO] ZIP procesado: ATW_BG002.lcorbo.zip | Bloques extraídos: 1
+2026-06-09 15:25:21,210 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-06-09 15:28:27,465 [INFO] Respuesta IA generada exitosamente (intento 1, 36163 chars)
+2026-06-09 15:28:28,191 [INFO] Diagrama DOT: 980 caracteres
+2026-06-09 15:28:30,833 [INFO] PNG generado (17520 bytes)
+2026-06-09 15:28:30,834 [INFO] Diagrama DOT: 3662 caracteres
+2026-06-09 15:28:32,127 [INFO] PNG generado (169435 bytes)
+2026-06-18 15:18:03,106 [INFO] DOCX procesado: D-OP-RPA-INTERNO-Legajos y formularios-PDD V.11.docx | Texto: ~5,286 tokens | Tablas: 11 | Imágenes: 16
+2026-06-18 15:18:08,206 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:18:08,207 [INFO] Retrying request to /chat/completions in 0.396665 seconds
+2026-06-18 15:18:10,145 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:18:10,146 [INFO] Retrying request to /chat/completions in 0.801461 seconds
+2026-06-18 15:18:12,395 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:18:12,399 [WARNING] Error transitorio en intento 1/3: InternalServerError: Internal Server Error
+2026-06-18 15:18:12,399 [INFO] Reintentando en 1s...
+2026-06-18 15:18:14,703 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:18:14,704 [INFO] Retrying request to /chat/completions in 0.416216 seconds
+2026-06-18 15:18:16,467 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:18:16,468 [INFO] Retrying request to /chat/completions in 0.764512 seconds
+2026-06-18 15:18:18,718 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:18:18,720 [WARNING] Error transitorio en intento 2/3: InternalServerError: Internal Server Error
+2026-06-18 15:18:18,720 [INFO] Reintentando en 2s...
+2026-06-18 15:18:21,933 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:18:21,933 [INFO] Retrying request to /chat/completions in 0.486394 seconds
+2026-06-18 15:18:23,769 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:18:23,770 [INFO] Retrying request to /chat/completions in 0.848300 seconds
+2026-06-18 15:18:25,841 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:18:25,843 [WARNING] Error transitorio en intento 3/3: InternalServerError: Internal Server Error
+2026-06-18 15:18:25,843 [ERROR] Todos los reintentos fallaron. Último error: Internal Server Error
+2026-06-18 15:21:45,730 [INFO] DOCX procesado: D-OP-RPA-INTERNO-Legajos y formularios-PDD V.11.docx | Texto: ~5,286 tokens | Tablas: 11 | Imágenes: 16
+2026-06-18 15:21:49,385 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:21:49,386 [INFO] Retrying request to /chat/completions in 0.443634 seconds
+2026-06-18 15:21:51,094 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:21:51,095 [INFO] Retrying request to /chat/completions in 0.833830 seconds
+2026-06-18 15:21:53,274 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:21:53,276 [WARNING] Error transitorio en intento 1/3: InternalServerError: Internal Server Error
+2026-06-18 15:21:53,277 [INFO] Reintentando en 1s...
+2026-06-18 15:21:55,601 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:21:55,601 [INFO] Retrying request to /chat/completions in 0.422791 seconds
+2026-06-18 15:21:57,292 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:21:57,293 [INFO] Retrying request to /chat/completions in 0.924763 seconds
+2026-06-18 15:21:59,522 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:21:59,523 [WARNING] Error transitorio en intento 2/3: InternalServerError: Internal Server Error
+2026-06-18 15:21:59,524 [INFO] Reintentando en 2s...
+2026-06-18 15:22:02,803 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:22:02,804 [INFO] Retrying request to /chat/completions in 0.404662 seconds
+2026-06-18 15:22:04,752 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:22:04,753 [INFO] Retrying request to /chat/completions in 0.938306 seconds
+2026-06-18 15:22:07,036 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:22:07,037 [WARNING] Error transitorio en intento 3/3: InternalServerError: Internal Server Error
+2026-06-18 15:22:07,037 [ERROR] Todos los reintentos fallaron. Último error: Internal Server Error
+2026-06-18 15:29:22,213 [INFO] DOCX procesado: D-OP-RPA-INTERNO-Legajos y formularios-PDD V.11.docx | Texto: ~5,286 tokens | Tablas: 11 | Imágenes: 16
+2026-06-18 15:29:23,806 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:29:23,806 [INFO] Retrying request to /chat/completions in 0.435164 seconds
+2026-06-18 15:29:25,561 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:29:25,561 [INFO] Retrying request to /chat/completions in 0.921606 seconds
+2026-06-18 15:29:27,839 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:29:27,841 [WARNING] Error transitorio en intento 1/3: InternalServerError: Internal Server Error
+2026-06-18 15:29:27,841 [INFO] Reintentando en 1s...
+2026-06-18 15:29:30,145 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:29:30,146 [INFO] Retrying request to /chat/completions in 0.474615 seconds
+2026-06-18 15:29:31,874 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:29:31,875 [INFO] Retrying request to /chat/completions in 0.907595 seconds
+2026-06-18 15:29:34,029 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:29:34,036 [WARNING] Error transitorio en intento 2/3: InternalServerError: Internal Server Error
+2026-06-18 15:29:34,036 [INFO] Reintentando en 2s...
+2026-06-18 15:29:37,356 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:29:37,356 [INFO] Retrying request to /chat/completions in 0.417462 seconds
+2026-06-18 15:29:39,042 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:29:39,043 [INFO] Retrying request to /chat/completions in 0.851525 seconds
+2026-06-18 15:29:41,102 [INFO] HTTP Request: POST http://192.168.1.48:8000/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-06-18 15:29:41,104 [WARNING] Error transitorio en intento 3/3: InternalServerError: Internal Server Error
+2026-06-18 15:29:41,105 [ERROR] Todos los reintentos fallaron. Último error: Internal Server Error
+2026-06-18 16:29:54,927 [ERROR] API_KEY no encontrada en las variables de entorno.
+2026-06-18 16:30:50,729 [INFO] DOCX procesado: D-OP-RPA-INTERNO-Legajos y formularios-PDD V.11.docx | Texto: ~5,286 tokens | Tablas: 11 | Imágenes: 16
+2026-06-18 16:30:54,212 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-06-18 16:31:39,861 [INFO] Respuesta IA generada exitosamente (intento 1, 13058 chars)
+2026-06-23 10:38:29,025 [INFO] No hay campos deseleccionados, se manda el prompt completo
+2026-06-23 10:38:29,027 [INFO] Prompt final: ~3,892 tokens estimados
+2026-06-23 10:38:30,034 [INFO] DOCX procesado: Transcripcion_Mapas_de_Calor.docx | Texto: ~5,466 tokens | Tablas: 0 | Imágenes: 0
+2026-06-23 10:38:30,055 [INFO] Ejemplos de referencia cargados: 2
+2026-06-23 10:38:31,933 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-06-23 10:39:48,869 [INFO] Respuesta IA generada exitosamente (intento 1, 17286 chars)
+2026-06-23 10:39:49,257 [INFO] Diagrama DOT: 637 caracteres
+2026-06-23 10:39:52,957 [INFO] PNG generado (13632 bytes)
+2026-06-23 10:39:52,959 [INFO] Diagrama DOT: 2558 caracteres
+2026-06-23 10:39:54,240 [INFO] PNG generado (84471 bytes)
+2026-06-24 12:20:59,413 [INFO] DOCX procesado: D-OP-RPA-DDS-Mapa de Calor-PDD(ES)-v3 1.docx | Texto: ~4,644 tokens | Tablas: 14 | Imágenes: 22
+2026-06-24 12:20:59,414 [WARNING] Carpeta de ejemplos no encontrada: C:\Users\mvidaurre\Desktop\RPA\uatAcelerator\utils\ejemplos_pdd
+2026-06-24 12:21:02,727 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-06-24 12:22:03,253 [INFO] Respuesta IA generada exitosamente (intento 1, 15524 chars)
+2026-06-26 09:10:44,304 [INFO] DOCX procesado: PDD_Correos.docx | Texto: ~4,045 tokens | Tablas: 11 | Imágenes: 28
+2026-06-26 09:10:44,305 [WARNING] Carpeta de ejemplos no encontrada: C:\Users\mvidaurre\Desktop\RPA\uatAcelerator\utils\ejemplos_pdd
+2026-06-26 09:10:47,764 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-06-26 09:11:40,130 [INFO] Respuesta IA generada exitosamente (intento 1, 12744 chars)
+2026-06-26 09:49:17,192 [INFO] DOCX procesado: PDD_Correos.docx | Texto: ~4,045 tokens | Tablas: 11 | Imágenes: 28
+2026-06-26 09:49:17,194 [WARNING] Carpeta de ejemplos no encontrada: C:\Users\mvidaurre\Desktop\RPA\uatAcelerator\utils\ejemplos_pdd
+2026-06-26 09:49:23,661 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-06-26 09:50:18,179 [INFO] Respuesta IA generada exitosamente (intento 1, 12007 chars)

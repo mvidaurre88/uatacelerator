@@ -63,8 +63,6 @@ def screen_connect_ai():
 
     st.session_state.response = generate_modify(add_current_date(data))
     
-    
-        
     # GENERACION DE DIAGRAMAS
     container.empty()
     with container.container():

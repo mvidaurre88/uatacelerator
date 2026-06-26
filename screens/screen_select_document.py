@@ -23,7 +23,7 @@ def screen_select_document():
 
     # DOCUMENTOS HABILITADOS
     enabled_docs = st.session_state.get("enabled_docs", [])
-    all_types = {"PDD": "📄 PDD", "SDD": "📄 SDD", "TDD": "📄 TDD"}
+    all_types = {"PDD": "📄 PDD", "SDD": "📄 SDD", "TDD": "📄 Test Script"}
     types = {all_types[d]: d for d in enabled_docs if d in all_types}
 
     if not types:

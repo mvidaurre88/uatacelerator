@@ -72,7 +72,7 @@ def generate_payloads(context):
                     "sheet_name": "Descripción del proceso",
                     "inputsProceso": context.get("inputsProceso", []),
                     "pasosProceso": context.get("pasosProceso", []),
-                }
+                },
             ]
     cases = {}
     for esc in context.get("escenarios", []):
@@ -94,8 +94,13 @@ def generate_payloads(context):
             payload["desarrollador"] = context.get("desarrollador", "")
         elif not is_single:
             cases[sheet_name] = [c.get("titulo", "") for c in casos]
-
         payloads.append(payload)
+    payloads.append({
+                    "tpl_idx": 5,
+                    "sheet_name": "Recomendaciones",
+                    "recomendaciones": context.get("recomendaciones", []),
+                })
+    
     return payloads, cases
 
 def get_column_width(ws, col_idx):

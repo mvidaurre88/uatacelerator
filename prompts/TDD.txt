@@ -152,6 +152,21 @@ Para cada caso indicá únicamente:
 - "datosPrueba": diccionario { "numeroPaso": "dato relevante" } SOLO para los pasos donde el dato sea informativo (input específico, configuración, condición disparadora). Para los pasos no listados se asumirá "N/A".
 
 ================================================================
+REGLAS DE RECOMENDACIONES
+================================================================
+Al final del JSON, incluí una lista "recomendaciones" con excepciones o situaciones
+límite que NO generaron un escenario formal, pero que un tester debería considerar.
+Incluí en esta lista:
+- Excepciones demasiado obvias para estructurar como caso (ej: sin conexión a internet,
+  credenciales vencidas a nivel OS, máquina sin permisos de escritura en disco).
+- Casos extremos infrecuentes pero posibles (ej: archivo con 0 registros válidos,
+  campo numérico con valor negativo inesperado).
+- Condiciones de entorno que el bot no controla (ej: SharePoint caído, VPN desconectada).
+- Situaciones que dependen de configuración externa al bot (timeouts, licencias).
+
+Redactá cada ítem como una frase breve que describa la situación, sin acción asociada.
+
+================================================================
 FORMATO A DEVOLVER
 ================================================================
 {
@@ -194,5 +209,6 @@ FORMATO A DEVOLVER
                 }
             ]
         }
-    ]
+    ],
+    "recomendaciones": [ <excepción o situación límite no contemplada en los escenarios formales>]   
 }

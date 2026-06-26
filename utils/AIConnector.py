@@ -5,11 +5,30 @@ import time
 import zipfile
 from pathlib import Path
 from openpyxl import load_workbook
+from openai import OpenAI
+import openai
 
 logger = logging.getLogger(__name__)
 
 # EXTENSIONES SOPORTADAS -----------------------------------------------------------------------------
 SUPPORTED_EXTENSIONS = {".pdf", ".docx", ".txt", ".png", ".py", ".xlsm", ".xlsx", ".json", ".atmx", ".xml"}
+
+# EJEMPLOS DE REFERENCIA -----------------------------------------------------------------------------
+_EJEMPLOS_DIR = Path(__file__).parent / "ejemplos_pdd"  # carpeta con los .md de referencia
+
+
+def _cargar_ejemplos() -> str:
+    """Lee los .md de la carpeta de ejemplos y los envuelve en <ejemplos_referencia>."""
+    if not _EJEMPLOS_DIR.exists():
+        logger.warning(f"Carpeta de ejemplos no encontrada: {_EJEMPLOS_DIR}")
+        return ""
+    partes = ["<ejemplos_referencia>"]
+    archivos = sorted(_EJEMPLOS_DIR.glob("*.md"))
+    for i, p in enumerate(archivos, start=1):
+        partes.append(f"### EJEMPLO {i} ({p.stem})\n{p.read_text(encoding='utf-8')}")
+    partes.append("</ejemplos_referencia>")
+    logger.info(f"Ejemplos de referencia cargados: {len(archivos)}")
+    return "\n\n".join(partes) if archivos else ""
 
 
 # WRAPPER PARA ARCHIVOS EXTRAÍDOS DE UN ZIP ----------------------------------------------------------
@@ -23,7 +42,7 @@ class _ZipFileWrapper:
         return self._data
 
 
-# ENCODE FILES TO SEND TO AI -------------------------------------------------------------------------
+# ENCODE FILES TO SEND TO AI
 def encode_file(file_or_path):
     """Acepta un Path o un objeto tipo UploadedFile de Streamlit.
     Devuelve un bloque (dict), una lista de bloques (para ZIPs), o None."""
@@ -127,13 +146,81 @@ def encode_file(file_or_path):
 
     return block
 
+TRANSIENT_ERRORS = (    anthropic.APIConnectionError, anthropic.APITimeoutError,
+                        anthropic.InternalServerError, anthropic.RateLimitError,
+                        openai.APIConnectionError, openai.APITimeoutError,
+                        openai.InternalServerError, openai.RateLimitError,
+                        httpx.RemoteProtocolError, httpx.ReadTimeout, httpx.ConnectTimeout)
+API_ERRORS = (anthropic.APIError, openai.APIError)
 
 # SEND TO AI
-# SEND TO AI
+def _anthropic_to_openai_blocks(blocks: list) -> list:
+    """Convierte bloques del formato Anthropic al de OpenAI/LM Studio."""
+    out = []
+    for b in blocks:
+        if b["type"] == "text":
+            out.append(b)  # idéntico en ambos
+        elif b["type"] == "image":
+            src = b["source"]
+            uri = f"data:{src['media_type']};base64,{src['data']}"
+            out.append({"type": "image_url", "image_url": {"url": uri}})
+        else:
+            # 'document'/PDF: qwen2.5-vl no lo soporta -> se omite
+            logger.warning(f"Bloque '{b['type']}' omitido (no soportado por QWEN).")
+    return out
+
+
+def _stream_anthropic(client, model, content_blocks, max_tokens, system=None):
+    kwargs = dict(
+        model=model,
+        max_tokens=max_tokens,
+        messages=[{"role": "user", "content": content_blocks}],
+    )
+    if system:
+        kwargs["system"] = system
+    with client.messages.stream(**kwargs) as stream:
+        yield from stream.text_stream
+
+
+def _stream_openai(client, model, content_blocks, max_tokens, system=None):
+    messages = []
+    if system:
+        # QWEN/LM Studio no cachea: aplanar los bloques de texto a un system role plano
+        sys_text = "\n\n".join(b["text"] for b in system if b.get("type") == "text")
+        if sys_text.strip():
+            messages.append({"role": "system", "content": sys_text})
+    messages.append({"role": "user", "content": content_blocks})
+    stream = client.chat.completions.create(
+        model=model,
+        max_tokens=max_tokens,
+        messages=messages,
+        stream=True,
+    )
+    for chunk in stream:
+        delta = chunk.choices[0].delta.content
+        if delta:
+            yield delta
+
+
 def send_to_ai(prompt: str, files: list, maxTokens: int = 4096) -> str:
 
-    # GET API KEY
-    key = st.secrets.get("API_KEY")
+    model = st.secrets.get("MODEL")
+
+    if model == "QWEN":
+        key = st.secrets.get("API_KEY_QWEN")
+        client = OpenAI(base_url="http://192.168.1.48:8000/v1", api_key=key)
+        model_name = "qwen/qwen2.5-vl-7b"
+        stream_fn = _stream_openai
+        maxTokens = max(maxTokens, 4096)
+    elif model == "CLAUDE":
+        key = st.secrets.get("API_KEY_CLAUDE")
+        client = anthropic.Anthropic(api_key=key, timeout=900.0)
+        model_name = "claude-sonnet-4-6"
+        stream_fn = _stream_anthropic
+    else:
+        logger.error(f"MODEL no reconocido: {model!r}")
+        raise ValueError(f"MODEL no reconocido: {model!r}")
+
     if not key:
         logger.error("API_KEY no encontrada en las variables de entorno.")
         raise EnvironmentError("API_KEY no encontrada en las variables de entorno.")
@@ -144,7 +231,7 @@ def send_to_ai(prompt: str, files: list, maxTokens: int = 4096) -> str:
         raise ValueError("El prompt está vacío.")
     prompt_text = prompt.strip()
 
-    # GET FILES AND ENCODE
+    # ENCODE FILES (formato Anthropic)
     content_blocks = []
     for file in files:
         result = encode_file(file)
@@ -162,28 +249,37 @@ def send_to_ai(prompt: str, files: list, maxTokens: int = 4096) -> str:
     # Prompt al final
     content_blocks.append({"type": "text", "text": prompt_text})
 
-    # CONFIG CLIENT
-    client = anthropic.Anthropic(api_key=key, timeout=900.0)
+    # Si el backend es OpenAI/LM Studio, adaptar el formato de los bloques
+    if model == "QWEN":
+        content_blocks = _anthropic_to_openai_blocks(content_blocks)
 
-    # Retry con backoff
+    # SYSTEM: ejemplos de referencia (cacheados en Claude, system plano en QWEN)
+    ejemplos = _cargar_ejemplos()
+    system = None
+    if ejemplos:
+        if model == "CLAUDE":
+            system = [{
+                "type": "text",
+                "text": ejemplos,
+                "cache_control": {"type": "ephemeral"},
+            }]
+        else:  # QWEN: sin cache_control
+            system = [{"type": "text", "text": ejemplos}]
+
+    # RETRY con backoff
     max_retries = 3
     last_error = None
     progress_placeholder = st.empty()
-    
+
     for attempt in range(max_retries):
         try:
             full_response = ""
-            with client.messages.stream(
-                model="claude-sonnet-4-6",
-                max_tokens=maxTokens,
-                messages=[{"role": "user", "content": content_blocks}],
-            ) as stream:
-                for text in stream.text_stream:
-                    full_response += text
-                    if len(full_response) % 200 < len(text):
-                        progress_placeholder.caption(
-                            f"⚙️ Generando respuesta... {len(full_response):,} caracteres"
-                        )
+            for text in stream_fn(client, model_name, content_blocks, maxTokens, system):
+                full_response += text
+                if len(full_response) % 200 < len(text):
+                    progress_placeholder.caption(
+                        f"⚙️ Generando respuesta... {len(full_response):,} caracteres"
+                    )
             progress_placeholder.empty()
             logger.info(
                 f"Respuesta IA generada exitosamente "
@@ -191,38 +287,26 @@ def send_to_ai(prompt: str, files: list, maxTokens: int = 4096) -> str:
             )
             return full_response
 
-        # ERRORES TRANSITORIOS: retry tiene sentido
-        except (
-            anthropic.APIConnectionError,
-            anthropic.APITimeoutError,
-            anthropic.InternalServerError,
-            anthropic.RateLimitError,
-            httpx.RemoteProtocolError,
-            httpx.ReadTimeout,
-            httpx.ConnectTimeout,
-        ) as e:
+        except TRANSIENT_ERRORS as e:
             last_error = e
             logger.warning(
                 f"Error transitorio en intento {attempt + 1}/{max_retries}: "
                 f"{type(e).__name__}: {e}"
             )
             if attempt < max_retries - 1:
-                wait = 2 ** attempt  # 1s, 2s, 4s
+                wait = 2 ** attempt
                 logger.info(f"Reintentando en {wait}s...")
                 time.sleep(wait)
                 continue
 
-        # ERRORES DE API NO RECUPERABLES: 400, 401, 403, 404, etc.
-        except anthropic.APIError as e:
+        except API_ERRORS as e:
             logger.error(f"Error de API no recuperable: {type(e).__name__}: {e}")
             raise
 
-        # CUALQUIER OTRO ERROR INESPERADO
         except Exception as e:
             logger.error(f"Error inesperado: {type(e).__name__}: {e}")
             raise
 
-    # Si llegamos acá, todos los reintentos fallaron
     logger.error(f"Todos los reintentos fallaron. Último error: {last_error}")
     raise last_error if last_error else RuntimeError("Falló sin error registrado")
 

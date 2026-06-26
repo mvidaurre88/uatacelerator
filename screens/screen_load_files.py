@@ -48,4 +48,4 @@ def screen_load_files():
             st.warning(f"Cargá tu {doc_type} anterior")
         else:
             container.empty()
-            go_to("personalize")
+            go_to("ai")

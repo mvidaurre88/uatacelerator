@@ -1,4 +1,3 @@
-from screens.screen_personalize import screen_personalize
 from screens.screen_init import screen_init
 from screens.screen_select_document import screen_select_document
 from screens.screen_load_files import screen_load_files
@@ -11,7 +10,6 @@ def get_screens(BASE_DIR):
         "init": lambda: screen_init(BASE_DIR),
         "select": screen_select_document,
         "load": screen_load_files,
-        "personalize": screen_personalize,
         "ai": screen_connect_ai,
         "verify": screen_verify,
         "final": screen_final,

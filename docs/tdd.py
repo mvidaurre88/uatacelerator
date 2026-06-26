@@ -12,11 +12,13 @@ class TDD(DocumentBase):
     
     # DEVUELVE LAS ACLARACIONES A MOSTRAR EN LA PANTALLA FINAL
     def get_aclaraciones(self) -> list[str]:
-        return []
+        return [
+            "<b>Recomedaciones:</b> Este apartado se encuentra al final del archivo y contiene una lista de posibles excepciones y errores no contemplados en los casos por ser considerados improbables o poco comunes"
+            ]
         
     # DEVUELVE EL NOMBRE DEL ARCHIVO A DESCARGAR
     def get_filename(self) -> str:
-        return f"TDD.{self.extension}"
+        return f"TestScript.{self.extension}"
     
     def get_fields(self):
         return None

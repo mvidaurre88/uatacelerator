@@ -28,7 +28,7 @@ def generate_docx(jsonText: dict, mode=None):
         buffer = generate_SDD(tpl, jsonText)
     elif document.get_filename() == "PDD.docx":
         buffer = generate_PDD(tpl, jsonText)
-    elif document.get_filename() == "TDD.xlsx":
+    elif document.get_filename() == "TestScript.xlsx":
         buffer = generate_TDD(jsonText)
     else:
         st.error("Error 500: Tipo de documento no soportado")

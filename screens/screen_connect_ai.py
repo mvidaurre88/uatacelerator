@@ -7,6 +7,7 @@ import logging
 import streamlit as st
 import graphviz
 
+from config import ENV
 from docs import get_doc
 from utils.navigation import *
 from components.top_bar import top_bar
@@ -34,18 +35,17 @@ def screen_connect_ai():
     
     container = st.empty()
     with container.container():
-        env = st.secrets.get("ENV")
         top_bar(back_to="load", show_stepper=True, step=2, key="ai")
         render_loading_frame("Procesando con IA...")
         
         # ACTUO SEGUN EL AMBIENTE Y ARCHIVO
         response = None
-        if env == "DESA":
+        if ENV == "DESA":
             doc_type = st.session_state.get("doc_type", "")
             if doc_type != "":
                 with open(os.path.join(BASE_DIR, "prompts", doc_type + "_example.json"), "r", encoding="utf-8") as f:
                     response = f.read()
-        elif env == "PROD":
+        elif ENV == "PROD":
             with st.spinner(""):
                 response = process_with_ai(st.session_state.files)
     

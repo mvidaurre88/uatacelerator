@@ -8,12 +8,12 @@ import streamlit as st
 # IMPORTS PROPIOS
 from utils.css_inyector import inject_css
 from utils.router import get_screens
+from config import ENABLED_DOCS
 
 # PATHS Y CONSTANTES
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 LOG_FILE = os.path.join(BASE_DIR, "errors.log")
 SCREENS = get_screens(BASE_DIR)
-ENABLED_DOCS = st.secrets.get("ENABLED_DOCS", [])
 
 # CONFIGURACION DE LOGGEO
 logging.basicConfig(level=logging.INFO,

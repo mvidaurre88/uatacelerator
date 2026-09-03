@@ -6,6 +6,7 @@ import zipfile
 from pathlib import Path
 from openpyxl import load_workbook
 from openai import OpenAI
+from config import API_KEY_CLAUDE, API_KEY_QWEN, MODEL
 import openai
 
 logger = logging.getLogger(__name__)
@@ -204,22 +205,18 @@ def _stream_openai(client, model, content_blocks, max_tokens, system=None):
 
 def send_to_ai(prompt: str, files: list, maxTokens: int = 4096) -> str:
 
-    model = st.secrets.get("MODEL")
-
-    if model == "QWEN":
-        key = st.secrets.get("API_KEY_QWEN")
-        client = OpenAI(base_url="http://192.168.1.48:8000/v1", api_key=key)
+    if MODEL == "QWEN":
+        client = OpenAI(base_url="http://192.168.1.48:8000/v1", api_key=API_KEY_QWEN)
         model_name = "qwen/qwen2.5-vl-7b"
         stream_fn = _stream_openai
         maxTokens = max(maxTokens, 4096)
-    elif model == "CLAUDE":
-        key = st.secrets.get("API_KEY_CLAUDE")
-        client = anthropic.Anthropic(api_key=key, timeout=900.0)
+    elif MODEL == "CLAUDE":
+        client = anthropic.Anthropic(api_key=API_KEY_CLAUDE, timeout=900.0)
         model_name = "claude-sonnet-4-6"
         stream_fn = _stream_anthropic
     else:
-        logger.error(f"MODEL no reconocido: {model!r}")
-        raise ValueError(f"MODEL no reconocido: {model!r}")
+        logger.error(f"MODEL no reconocido: {MODEL!r}")
+        raise ValueError(f"MODEL no reconocido: {MODEL!r}")
 
     if not key:
         logger.error("API_KEY no encontrada en las variables de entorno.")
@@ -250,14 +247,14 @@ def send_to_ai(prompt: str, files: list, maxTokens: int = 4096) -> str:
     content_blocks.append({"type": "text", "text": prompt_text})
 
     # Si el backend es OpenAI/LM Studio, adaptar el formato de los bloques
-    if model == "QWEN":
+    if MODEL == "QWEN":
         content_blocks = _anthropic_to_openai_blocks(content_blocks)
 
     # SYSTEM: ejemplos de referencia (cacheados en Claude, system plano en QWEN)
     ejemplos = _cargar_ejemplos()
     system = None
     if ejemplos:
-        if model == "CLAUDE":
+        if MODEL == "CLAUDE":
             system = [{
                 "type": "text",
                 "text": ejemplos,

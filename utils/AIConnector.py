@@ -218,10 +218,6 @@ def send_to_ai(prompt: str, files: list, maxTokens: int = 4096) -> str:
         logger.error(f"MODEL no reconocido: {MODEL!r}")
         raise ValueError(f"MODEL no reconocido: {MODEL!r}")
 
-    if not key:
-        logger.error("API_KEY no encontrada en las variables de entorno.")
-        raise EnvironmentError("API_KEY no encontrada en las variables de entorno.")
-
     # VALIDAR PROMPT
     if not prompt or not prompt.strip():
         logger.error("El prompt recibido está vacío.")

@@ -9,3 +9,4 @@ mammoth
 graphviz>=0.20
 streamlit-keyup
 openai
+httpx

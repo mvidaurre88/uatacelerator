@@ -60,7 +60,8 @@ def screen_connect_ai():
         logger.error(f"Contenido recibido:\n{file_content_clean[:2000]}")
         st.error(f"Error al procesar la respuesta de la IA.\n\n`{e}`")
         st.stop()
-
+        
+    data["desarrollador"] = st.session_state.get("developer_name", data.get("desarrollador", ""))
     st.session_state.response = generate_modify(add_current_date(data))
     
     # GENERACION DE DIAGRAMAS

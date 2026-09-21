@@ -7,7 +7,7 @@ import streamlit as st
 
 # IMPORTS PROPIOS
 from utils.navigation import *
-from utils.docx_generator import *
+from utils.test_script_generator import generate_TDD
 from components.top_bar import top_bar
 from components.section_title import section_title
 
@@ -17,7 +17,8 @@ def screen_verify():
     
     try:
         sanitized = sanitize(st.session_state.response)
-        generate_docx(sanitized, None)
+        buffer = generate_TDD(sanitized)
+        st.session_state.doc_buffer = buffer 
         go_to("final")
     except Exception as e:
         st.error(f"Error al generar: {e}")
@@ -28,15 +29,18 @@ LIST_OF_STRINGS_FIELDS = {
     "entradas", "salidas", "contactos", "requisitos", "inputsProceso"
 }
 
-# REEMPLAZA LOS VALORES NONE POR STRING VACIOS
-def sanitize(data):
+def sanitize(data, parent_key=None):
     if isinstance(data, dict):
-        for field in LIST_OF_STRINGS_FIELDS:
-            if field in data and isinstance(data[field], list):
-                data[field] = denormalize_list_field(data[field])
-        return {k: sanitize(v) for k, v in data.items()}
+        result = {}
+        for k, v in data.items():
+            if k in LIST_OF_STRINGS_FIELDS and isinstance(v, list):
+                v = denormalize_list_field(v)
+            result[k] = sanitize(v, parent_key=k)
+        return result
     elif isinstance(data, list):
-        return [sanitize(i) for i in data]
+        return [sanitize(i, parent_key=parent_key) for i in data]
+    elif isinstance(data, str):
+        return data.replace("<", "&lt;").replace(">", "&gt;")
     return data
 
 def denormalize_list_field(items):

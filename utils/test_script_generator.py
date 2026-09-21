@@ -78,12 +78,13 @@ def generate_payloads(context):
     for esc in context.get("escenarios", []):
         casos = esc.get("casos", [])
         is_single = len(casos) <= 1
-        sheet_name = f"Escenario {esc.get('numero', '')}"
+        numero = esc.get("numero", "")
+        sheet_name = f"Escenario {numero}"
 
         payload = {
             "tpl_idx": 3 if is_single else 4,
             "sheet_name": sheet_name,
-            "numero": esc.get("numero", ""),
+            "numero": numero,
             "titulo": esc.get("titulo", ""),
             "casos": casos,
             "fecha": context.get("fecha", ""),
@@ -95,12 +96,26 @@ def generate_payloads(context):
         elif not is_single:
             cases[sheet_name] = [c.get("titulo", "") for c in casos]
         payloads.append(payload)
+
+        # HOJA DE LOG INTERCALADA, UNA POR ESCENARIO
+        payloads.append({
+            "tpl_idx": 6,
+            "sheet_name": f"Log {numero}",
+            "numero": numero,
+        })
+
+    # CODE REVIEW
     payloads.append({
-                    "tpl_idx": 5,
-                    "sheet_name": "Recomendaciones",
-                    "recomendaciones": context.get("recomendaciones", []),
+                    "tpl_idx": 7,
+                    "sheet_name": "Code Review",
                 })
     
+    payloads.append({
+                        "tpl_idx": 5,
+                        "sheet_name": "Recomendaciones",
+                        "recomendaciones": context.get("recomendaciones", []),
+                    })
+
     return payloads, cases
 
 def get_column_width(ws, col_idx):

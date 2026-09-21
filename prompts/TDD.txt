@@ -174,7 +174,6 @@ FORMATO A DEVOLVER
     "nombreBot": "<nombre del bot extraído del PDD>",
     "cliente": "<nombre del cliente extraído del PDD>",
     "nombreProyecto": "<nombre del proyecto JIRA si se menciona, sino igual al nombreBot>",
-    "desarrollador": "<nombre del desarrollador>",
     "descripcionBot": "<descripción breve del bot derivada del propósito del proceso del PDD>",
     "inputsProceso": [
         "<archivos o datos de entrada extraídos del PDD>"

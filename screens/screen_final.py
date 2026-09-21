@@ -1,3 +1,5 @@
+import re
+
 # IMPORTS DE TERCEROS
 import streamlit as st
 
@@ -7,10 +9,12 @@ from components.top_bar import top_bar
 from components.form import field_row
 from docs import get_doc
 
+INVALID_FILENAME_CHARS = r'[\\/:*?"<>|]'
+
 def screen_final():
     # OBTENGO EL TIPO DE DOCUMENTO SELECCIONADO
     document = get_doc(st.session_state.doc_type)
-    filename = document.get_filename()
+    filename = build_filename(document.get_filename())
     extension = f".{filename.split('.')[-1]}"
 
     # INICIALIZO EL NOMBRE DEL ARCHIVO POR DEFAULT (solo la primera vez)
@@ -49,6 +53,28 @@ def screen_final():
     with col_2:
         if st.button("Generar nuevo documento", use_container_width=True, type="secondary"):
             go_to("select")
+
+
+# REEMPLAZA LOS PLACEHOLDERS DEL NOMBRE CON LOS DATOS DEL DOCUMENTO GENERADO
+def build_filename(template: str) -> str:
+    data = st.session_state.get("response", {}) or {}
+
+    placeholders = {
+        "[CLIENTE]": data.get("cliente", ""),
+        "[IDBOT]": data.get("codigoBot", ""),
+        "[NOMBREBOT]": data.get("nombreBot", ""),
+    }
+
+    name = template
+    for placeholder, value in placeholders.items():
+        if value:
+            name = name.replace(placeholder, sanitize_filename_part(str(value)))
+    return name
+
+
+# SACA CARACTERES INVALIDOS PARA NOMBRES DE ARCHIVO EN WINDOWS
+def sanitize_filename_part(value: str) -> str:
+    return re.sub(INVALID_FILENAME_CHARS, "", value).strip()
 
 
 def render_clarifications(items: list[str]) -> None:

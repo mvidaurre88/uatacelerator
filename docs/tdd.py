@@ -18,7 +18,7 @@ class TDD(DocumentBase):
         
     # DEVUELVE EL NOMBRE DEL ARCHIVO A DESCARGAR
     def get_filename(self) -> str:
-        return f"TestScript.{self.extension}"
+        return f"T-OP-RPA-[CLIENTE]-[IDBOT]-[NOMBREBOT].{self.extension}"
     
     def get_fields(self):
         return None

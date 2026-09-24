@@ -3,6 +3,10 @@ __pycache__/
 secrets.toml
 *.secrets.toml
 .streamlit/secrets.toml
+.streamlit/secrets.env
+*.env
+.env
 .devcontainer/
 ~$*
-errors.log
+*.log
+venv/
